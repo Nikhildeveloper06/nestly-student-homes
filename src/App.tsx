@@ -1,9 +1,14 @@
+import Sidebar from "./components/layout/Sidebar";
+
 function App() {
   return (
-    <h1 className="text-5xl font-bold text-blue-600 p-10">
-      Nestly is live 🚀
-    </h1>
-  )
+    <div className="flex min-h-screen bg-nestly-cream">
+      <Sidebar />
+      <main className="flex-1 p-4">
+        {/* Hero and other sections will go here next */}
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

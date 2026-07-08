@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-nestly-blue: #3B6FE0;
+  --color-nestly-orange: #F0A830;
+  --color-nestly-red: #E1503E;
+  --color-nestly-green: #5CB85C;
+  --color-nestly-purple: #9B6DF5;
+  --color-nestly-cream: #F0EBE3;
+  --color-nestly-black: #111111;
+}
+
+body {
+  background-color: var(--color-nestly-cream);
+  font-family: var(--font-body);
+  color: var(--color-nestly-black);
+}
