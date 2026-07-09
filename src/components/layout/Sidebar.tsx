@@ -45,7 +45,7 @@ function WhatsAppIcon() {
 
 export default function Sidebar() {
   return (
-    <aside className="sidebar-entrance w-48 shrink-0 flex flex-col gap-2 p-3 h-screen">
+    <aside className="sidebar-entrance hidden md:flex md:flex-col w-48 shrink-0 gap-2 p-3 h-screen">
       <div className="mb-2">
         <h1 className="font-display font-bold text-2xl leading-none">
           nestly.
@@ -56,19 +56,21 @@ export default function Sidebar() {
       </div>
 
       <div className="flex-1 flex flex-col gap-2 min-h-0">
-        {navItems.map((item) => (
-          <a
-            key={item.number}
-            href={"#section-" + item.number}
-            className={item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white"}
-          >
-            <div className="flex justify-between items-start">
-              <span className="font-medium text-sm">{item.number}</span>
-              <ArrowIcon />
-            </div>
-            <span className="text-sm leading-tight font-medium">{item.label}</span>
-          </a>
-        ))}
+        {navItems.map(function (item) {
+          return (
+            
+              key={item.number}
+              href={"#section-" + item.number}
+              className={item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white"}
+            >
+              <div className="flex justify-between items-start">
+                <span className="font-medium text-sm">{item.number}</span>
+                <ArrowIcon />
+              </div>
+              <span className="text-sm leading-tight font-medium">{item.label}</span>
+            </a>
+          );
+        })}
       </div>
 
       <WaveButton

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
+import MobileNav from "./components/layout/MobileNav";
 import Footer from "./components/layout/Footer";
 import Preloader from "./components/ui/Preloader";
 import Hero from "./components/sections/Hero";
@@ -16,7 +17,7 @@ function App() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(function () {
     const timer = setTimeout(function () {
       setLoading(false);
     }, 2100);
@@ -26,7 +27,7 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
+  useEffect(function () {
     if (!wrapperRef.current || !contentRef.current) {
       return;
     }
@@ -58,6 +59,7 @@ function App() {
           ref={wrapperRef}
           className="flex-1 min-w-0 p-4 h-screen overflow-y-auto"
         >
+          <MobileNav />
           <div ref={contentRef}>
             <Hero />
             <Locations />
