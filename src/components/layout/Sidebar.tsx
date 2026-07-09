@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import WaveButton from "../ui/WaveButton";
 
 const navItems = [
-  { number: "01", label: "Student Homes", color: "bg-nestly-blue" },
-  { number: "02", label: "Our way of living", color: "bg-nestly-orange" },
-  { number: "03", label: "Community", color: "bg-nestly-red" },
-  { number: "04", label: "Contact", color: "bg-nestly-green" },
+  { number: "01", label: "Student Homes", color: "bg-nestly-blue", to: "/student-homes" },
+  { number: "02", label: "Our way of living", color: "bg-nestly-orange", href: "/#section-02" },
+  { number: "03", label: "Community", color: "bg-nestly-red", href: "/#section-03" },
+  { number: "04", label: "Contact", color: "bg-nestly-green", href: "/#section-04" },
 ];
 
 function ArrowIcon() {
@@ -47,9 +48,11 @@ export default function Sidebar() {
   return (
     <aside className="sidebar-entrance hidden md:flex md:flex-col w-48 shrink-0 gap-2 p-3 h-screen">
       <div className="mb-2">
-        <h1 className="font-display font-bold text-2xl leading-none">
-          nestly.
-        </h1>
+        <Link to="/">
+          <h1 className="font-display font-bold text-2xl leading-none">
+            nestly.
+          </h1>
+        </Link>
         <p className="text-[9px] tracking-widest uppercase mt-1">
           Unique Student Homes
         </p>
@@ -57,24 +60,35 @@ export default function Sidebar() {
 
       <div className="flex-1 flex flex-col gap-2 min-h-0">
         {navItems.map(function (item) {
-          return (
-            <a
-              key={item.number}
-              href={"#section-" + item.number}
-              className={item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white"}
-            >
+          const className = item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white";
+          const inner = (
+            <>
               <div className="flex justify-between items-start">
                 <span className="font-medium text-sm">{item.number}</span>
                 <ArrowIcon />
               </div>
               <span className="text-sm leading-tight font-medium">{item.label}</span>
+            </>
+          );
+
+          if (item.to) {
+            return (
+              <Link key={item.number} to={item.to} className={className}>
+                {inner}
+              </Link>
+            );
+          }
+
+          return (
+            <a key={item.number} href={item.href} className={className}>
+              {inner}
             </a>
           );
         })}
       </div>
 
       <WaveButton
-        href="#book"
+        href="/#book"
         baseClassName="rounded-xl p-3 text-center font-display font-medium bg-nestly-purple text-sm"
       >
         Book your Unit

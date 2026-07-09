@@ -1,21 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
 import MobileNav from "./components/layout/MobileNav";
 import Footer from "./components/layout/Footer";
 import Preloader from "./components/ui/Preloader";
-import Hero from "./components/sections/Hero";
-import Locations from "./components/sections/Locations";
-import FeatureGrid from "./components/sections/FeatureGrid";
-import StudentLiving from "./components/sections/StudentLiving";
-import Community from "./components/sections/Community";
-import WhatDefinesUs from "./components/sections/WhatDefinesUs";
-import StayingConnected from "./components/sections/StayingConnected";
 
-function App() {
+export default function Layout() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(function () {
     const timer = setTimeout(function () {
@@ -30,6 +25,10 @@ function App() {
   useEffect(function () {
     if (!wrapperRef.current || !contentRef.current) {
       return;
+    }
+
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTop = 0;
     }
 
     const lenis = new Lenis({
@@ -48,7 +47,7 @@ function App() {
     return function () {
       lenis.destroy();
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -61,13 +60,7 @@ function App() {
         >
           <MobileNav />
           <div ref={contentRef}>
-            <Hero />
-            <Locations />
-            <FeatureGrid />
-            <StudentLiving />
-            <Community />
-            <WhatDefinesUs />
-            <StayingConnected />
+            <Outlet />
             <Footer />
           </div>
         </main>
@@ -75,5 +68,3 @@ function App() {
     </>
   );
 }
-
-export default App;
