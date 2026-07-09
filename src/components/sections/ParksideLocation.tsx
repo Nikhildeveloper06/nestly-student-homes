@@ -29,9 +29,9 @@ const walkTimes = [
   { time: "2'", label: "to the neighbourhood park" },
 ];
 
-function ArrowDown() {
+function ArrowDown({ size }: { size: number }) {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B6FE0" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#3B6FE0" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
       <line x1="12" y1="5" x2="12" y2="19" />
       <polyline points="6 13 12 19 18 13" />
     </svg>
@@ -128,16 +128,16 @@ export default function ParksideLocation() {
       </div>
 
       <div className="mt-4 bg-nestly-red rounded-3xl py-4 px-4 md:px-8 flex items-center justify-between">
-        <div className="flex gap-1.5">
-          <ArrowDown />
-          <ArrowDown />
+        <div className="flex items-end gap-1.5">
+          <ArrowDown size={28} />
+          <ArrowDown size={20} />
         </div>
         <h3 className="font-display font-bold text-lg sm:text-xl md:text-3xl text-white text-center">
           Check out our Units
         </h3>
-        <div className="flex gap-1.5">
-          <ArrowDown />
-          <ArrowDown />
+        <div className="flex items-end gap-1.5">
+          <ArrowDown size={20} />
+          <ArrowDown size={28} />
         </div>
       </div>
     </section>
