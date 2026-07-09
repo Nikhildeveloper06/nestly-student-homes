@@ -1,3 +1,5 @@
+import WaveButton from "../ui/WaveButton";
+
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
@@ -37,6 +39,12 @@ function ArrowUp() {
 const exploreLinks = ["Student Homes", "Our way of living", "Community", "Contact"];
 const companyLinks = ["About us", "Careers", "Blog", "Press"];
 
+const socials = [
+  { Icon: InstagramIcon, color: "hover:bg-nestly-purple" },
+  { Icon: FacebookIcon, color: "hover:bg-nestly-blue" },
+  { Icon: WhatsAppIcon, color: "hover:bg-nestly-green" },
+];
+
 export default function Footer() {
   return (
     <footer className="mt-4">
@@ -48,35 +56,47 @@ export default function Footer() {
               Unique student homes, designed for how you actually live.
             </p>
             <div className="flex gap-3 mt-4">
-              <div className="bg-white/10 rounded-md p-2"><InstagramIcon /></div>
-              <div className="bg-white/10 rounded-md p-2"><FacebookIcon /></div>
-              <div className="bg-white/10 rounded-md p-2"><WhatsAppIcon /></div>
+              {socials.map(function (item, i) {
+                const Icon = item.Icon;
+                return (
+                  <div
+                    key={i}
+                    className={"bg-white/10 rounded-md p-2 transition-colors duration-300 cursor-pointer " + item.color}
+                  >
+                    <Icon />
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div>
             <p className="font-display font-semibold text-nestly-orange text-sm uppercase tracking-wide">Explore</p>
             <ul className="mt-4 flex flex-col gap-3">
-              {exploreLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-white/80 hover:text-white transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {exploreLinks.map(function (link) {
+                return (
+                  <li key={link}>
+                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           <div>
             <p className="font-display font-semibold text-nestly-green text-sm uppercase tracking-wide">Company</p>
             <ul className="mt-4 flex flex-col gap-3">
-              {companyLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-white/80 hover:text-white transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {companyLinks.map(function (link) {
+                return (
+                  <li key={link}>
+                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -84,19 +104,23 @@ export default function Footer() {
             <p className="font-display font-semibold text-nestly-blue text-sm uppercase tracking-wide">Get in touch</p>
             <p className="mt-4 text-sm text-white/80">hello@nestly.example</p>
             <p className="text-sm text-white/80 mt-1">+91 98765 43210</p>
-            <a
-              href="#book"
-              className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-5 py-2.5 text-sm font-display font-medium"
-            >
-              Book a tour
-            </a>
+            <div className="mt-4 w-fit">
+              <WaveButton
+                href="#book"
+                baseClassName="rounded-full px-5 py-2.5 bg-nestly-purple text-sm"
+                textClassName="text-black"
+              >
+                Book a tour
+              </WaveButton>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 text-center overflow-hidden">
-          <h2 className="footer-wordmark font-display font-bold text-[18vw] md:text-[10vw] leading-none whitespace-nowrap">
+        <div className="mt-12 md:mt-16 text-center">
+          <h2 className="font-display font-bold text-white text-[16vw] md:text-[9vw] leading-none whitespace-nowrap">
             nestly.
           </h2>
+          <div className="footer-underline h-1.5 w-40 md:w-56 mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -104,13 +128,10 @@ export default function Footer() {
             (c) 2026 Nestly Student Homes. Built as a design portfolio project.
           </p>
           <div className="flex items-center gap-3">
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80">FAQs</button>
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80">Privacy Policy</button>
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80">Cookies Policy</button>
-            <a
-              href="#top"
-              className="bg-white/10 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white/20 transition-colors"
-            >
+            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">FAQs</button>
+            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">Privacy Policy</button>
+            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">Cookies Policy</button>
+            <a href="#top" className="bg-white/10 rounded-full w-10 h-10 flex items-center justify-center hover:bg-nestly-blue hover:-translate-y-1 transition-all duration-300">
               <ArrowUp />
             </a>
           </div>
