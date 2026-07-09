@@ -1,15 +1,32 @@
-import { useEffect, useRef } from "react";
-import type { RefObject } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-function PhotoCard({ src }: { src: string }) {
+function SwayingPlant() {
   return (
-    <div className="w-[420px] h-full shrink-0 rounded-3xl overflow-hidden">
+    <div className="absolute top-6 right-6 w-14 h-14 float-icon">
+      <svg viewBox="0 0 60 60" className="w-full h-full sway-icon">
+        <rect x="20" y="42" width="20" height="14" rx="3" fill="#3B6FE0" />
+        <path
+          d="M30,42 C30,30 22,26 18,16 C24,20 28,26 30,34 C32,24 28,16 24,8 C32,12 36,22 30,34 C34,24 40,20 44,14 C42,24 36,32 30,42 Z"
+          fill="white"
+          fillOpacity="0.9"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function PhotoCard({
+  src,
+  position,
+}: {
+  src: string;
+  position?: string;
+}) {
+  return (
+    <div className="rounded-3xl overflow-hidden h-full">
       <img
         src={src}
         alt="Nestly community space"
         className="w-full h-full object-cover"
+        style={{ objectPosition: position || "center" }}
       />
     </div>
   );
@@ -30,14 +47,16 @@ function ListCard({
     <div
       className={
         color +
-        " w-[340px] h-full shrink-0 rounded-3xl p-8 flex flex-col text-nestly-black"
+        " rounded-3xl p-5 md:p-6 flex flex-col text-nestly-black h-full overflow-hidden"
       }
     >
-      <h3 className="font-display font-bold text-2xl">{title}</h3>
-      <p className="font-display font-semibold mt-1 mb-6">{subtitle}</p>
-      <ul className="flex flex-col gap-3">
+      <h3 className="font-display font-bold text-lg md:text-xl">{title}</h3>
+      <p className="font-display font-semibold mt-1 mb-3 text-sm">
+        {subtitle}
+      </p>
+      <ul className="flex flex-col gap-2 overflow-y-auto">
         {items.map((item) => (
-          <li key={item} className="border-b border-black/20 pb-3 text-sm">
+          <li key={item} className="border-b border-black/20 pb-2 text-xs md:text-sm">
             {item}
           </li>
         ))}
@@ -48,121 +67,77 @@ function ListCard({
 
 function IntroCard() {
   return (
-    <div className="bg-nestly-red w-[420px] h-full shrink-0 rounded-3xl p-8 flex flex-col justify-between text-white">
+    <div className="relative bg-nestly-red rounded-3xl p-5 md:p-6 flex flex-col justify-between text-white h-full overflow-hidden">
       <span className="border border-white rounded-full px-4 py-2 w-fit text-sm">
         All-Inclusive Living
       </span>
+
+      <SwayingPlant />
+
       <div>
-        <h2 className="font-display font-bold text-4xl leading-tight">
+        <h2 className="font-display font-bold text-2xl md:text-3xl leading-tight">
           One Unit.
           <br />
           An entire universe.
         </h2>
-        <p className="font-display font-semibold mt-4">
+        <p className="font-display font-semibold mt-3 text-sm">
           Your rent covers everything
         </p>
-        <p className="mt-3 text-white/90 text-sm">
+        <p className="mt-2 text-white/90 text-xs md:text-sm">
           Each unit is its own universe, combining spaces and services for
-          effortless, all-inclusive student living. Everything is included
-          in your rent. No hidden fees, no surprises.
+          effortless, all-inclusive student living. No hidden fees, no
+          surprises.
         </p>
       </div>
     </div>
   );
 }
 
-export default function FeatureGrid({
-  scrollerRef,
-}: {
-  scrollerRef: RefObject<HTMLDivElement | null>;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current || !trackRef.current || !scrollerRef.current) {
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const section = sectionRef.current;
-    const track = trackRef.current;
-    const scroller = scrollerRef.current;
-
-    const ctx = gsap.context(function () {
-      const distance = track.scrollWidth - section.clientWidth;
-
-      gsap.to(track, {
-        x: -distance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          scroller: scroller,
-          start: "top top",
-          end: "+=" + distance,
-          scrub: 1,
-          pin: true,
-          pinType: "transform",
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-
-    return function () {
-      ctx.revert();
-    };
-  }, [scrollerRef]);
-
+export default function FeatureGrid() {
   return (
-    <section
-      ref={sectionRef}
-      className="relative mt-4 h-[560px] rounded-3xl overflow-hidden"
-    >
-      <div ref={trackRef} className="flex gap-4 h-full w-max">
-        <IntroCard />
-        <PhotoCard src="/images/hero/lounge-area.webp" />
-        <ListCard
-          color="bg-nestly-purple"
-          title="Community living spaces"
-          subtitle="Open access, 24/7"
-          items={["Fully equipped gym", "Self-service laundry room", "Social areas"]}
-        />
-        <ListCard
-          color="bg-nestly-orange"
-          title="Security"
-          subtitle="Day and night"
-          items={[
-            "24/7 CCTV Surveillance",
-            "7/7 Night patrol",
-            "High-security entrance door",
-            "Smart and secure access control",
-          ]}
-        />
-        <PhotoCard src="/images/hero/lounge-area.webp" />
-        <ListCard
-          color="bg-nestly-green"
-          title="Smart Living"
-          subtitle="Designed for everyday ease"
-          items={[
-            "Digital mobile key",
-            "Shared spaces reservations",
-            "Maintenance ticketing system",
-            "Laundry - EasyPay",
-            "Digital intercom",
-          ]}
-        />
-        <ListCard
-          color="bg-nestly-blue"
-          title="Support"
-          subtitle="We've got you covered"
-          items={[
-            "24/7 Resident support",
-            "Check-in & Onboarding assistance",
-            "Fast request handling",
-            "Fast maintenance support",
-          ]}
-        />
+    <section className="mt-4">
+      <div
+        className="grid gap-4 h-[clamp(480px,75vh,700px)]"
+        style={{
+          gridTemplateColumns: "1fr 1.3fr 1fr",
+          gridTemplateRows: "1fr 1fr",
+          gridTemplateAreas: '"intro photo1 security" "intro community photo2"',
+        }}
+      >
+        <div style={{ gridArea: "intro" }}>
+          <IntroCard />
+        </div>
+
+        <div style={{ gridArea: "photo1" }}>
+          <PhotoCard src="/images/hero/lounge-area.webp" position="top" />
+        </div>
+
+        <div style={{ gridArea: "security" }}>
+          <ListCard
+            color="bg-nestly-orange"
+            title="Security"
+            subtitle="Day and night"
+            items={[
+              "24/7 CCTV Surveillance",
+              "7/7 Night patrol",
+              "High-security entrance door",
+              "Smart and secure access control",
+            ]}
+          />
+        </div>
+
+        <div style={{ gridArea: "community" }}>
+          <ListCard
+            color="bg-nestly-purple"
+            title="Community living spaces"
+            subtitle="Open access, 24/7"
+            items={["Fully equipped gym", "Self-service laundry room", "Social areas"]}
+          />
+        </div>
+
+        <div style={{ gridArea: "photo2" }}>
+          <PhotoCard src="/images/hero/lounge-area.webp" position="bottom" />
+        </div>
       </div>
     </section>
   );

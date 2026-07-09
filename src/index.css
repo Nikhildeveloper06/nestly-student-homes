@@ -54,3 +54,30 @@ body {
   animation: marquee-scroll 25s linear infinite;
   width: max-content;
 }
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.sway-icon {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-icon {
+  animation: float-y 2.5s ease-in-out infinite;
+}
