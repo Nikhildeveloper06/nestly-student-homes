@@ -1,5 +1,6 @@
 import ImageCarousel from "../components/ui/ImageCarousel";
 import ParksideLocation from "../components/sections/ParksideLocation";
+import UnitsShowcase from "../components/sections/UnitsShowcase";
 
 const carouselImages = [
   "/images/hero/lounge-area.webp",
@@ -40,6 +41,7 @@ export default function StudentHomesPage() {
       </section>
 
       <ParksideLocation />
+      <UnitsShowcase />
     </>
   );
 }
