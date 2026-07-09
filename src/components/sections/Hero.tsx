@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="section-01"
-      className="relative w-full h-[calc(100vh-2rem)] rounded-3xl overflow-hidden"
+      className="hero-entrance relative w-full h-[calc(100vh-2rem)] rounded-3xl overflow-hidden"
     >
       <img
         src="/images/hero/lounge-area.webp"

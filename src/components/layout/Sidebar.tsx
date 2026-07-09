@@ -45,7 +45,7 @@ function WhatsAppIcon() {
 
 export default function Sidebar() {
   return (
-    <aside className="w-48 shrink-0 flex flex-col gap-2 p-3 h-screen">
+    <aside className="sidebar-entrance w-48 shrink-0 flex flex-col gap-2 p-3 h-screen">
       <div className="mb-2">
         <h1 className="font-display font-bold text-2xl leading-none">
           nestly.
