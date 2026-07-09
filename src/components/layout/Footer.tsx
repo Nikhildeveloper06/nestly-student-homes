@@ -1,5 +1,3 @@
-import WaveButton from "../ui/WaveButton";
-
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
@@ -104,15 +102,12 @@ export default function Footer() {
             <p className="font-display font-semibold text-nestly-blue text-sm uppercase tracking-wide">Get in touch</p>
             <p className="mt-4 text-sm text-white/80">hello@nestly.example</p>
             <p className="text-sm text-white/80 mt-1">+91 98765 43210</p>
-            <div className="mt-4 w-fit">
-              <WaveButton
-                href="#book"
-                baseClassName="rounded-full px-6 py-3.5 bg-nestly-purple text-sm"
-                textClassName="text-black"
-              >
-                Book a tour
-              </WaveButton>
-            </div>
+            <a
+              href="#book"
+              className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-6 py-3.5 text-sm font-display font-medium transition-all duration-300 hover:bg-white hover:scale-105"
+            >
+              Book a tour
+            </a>
           </div>
         </div>
 
