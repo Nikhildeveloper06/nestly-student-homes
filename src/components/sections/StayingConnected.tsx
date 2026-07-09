@@ -38,14 +38,16 @@ const movingItems: MovingItem[] = [
 
 const doubled = [...movingItems, ...movingItems];
 
+const CARD_SIZE = "w-[220px] h-[320px] sm:w-[260px] sm:h-[380px] md:w-[320px] md:h-[460px]";
+
 function MovingCard({ item }: { item: MovingItem }) {
   if (item.type === "blue") {
     return (
-      <div className="bg-nestly-blue rounded-3xl p-6 flex flex-col justify-between w-[320px] h-[460px] shrink-0 text-white">
+      <div className={"bg-nestly-blue rounded-3xl p-5 md:p-6 flex flex-col justify-between shrink-0 text-white " + CARD_SIZE}>
         <div className="bg-black/70 rounded-md p-1.5 w-fit">
           <InstagramIcon />
         </div>
-        <p className="font-display font-bold text-xl leading-tight">
+        <p className="font-display font-bold text-base md:text-xl leading-tight">
           {item.text}
         </p>
       </div>
@@ -53,7 +55,7 @@ function MovingCard({ item }: { item: MovingItem }) {
   }
 
   return (
-    <div className="relative rounded-3xl overflow-hidden w-[320px] h-[460px] shrink-0">
+    <div className={"relative rounded-3xl overflow-hidden shrink-0 " + CARD_SIZE}>
       <img
         src={item.src}
         alt=""
@@ -63,8 +65,8 @@ function MovingCard({ item }: { item: MovingItem }) {
         <InstagramIcon />
       </div>
       {item.caption && (
-        <div className="absolute bottom-3 left-3 right-3 bg-nestly-orange rounded-2xl p-4">
-          <p className="font-display font-bold text-lg leading-tight">
+        <div className="absolute bottom-3 left-3 right-3 bg-nestly-orange rounded-2xl p-3 md:p-4">
+          <p className="font-display font-bold text-sm md:text-lg leading-tight">
             {item.caption}
           </p>
         </div>
@@ -77,11 +79,11 @@ export default function StayingConnected() {
   return (
     <section className="mt-4">
       <div className="flex gap-4">
-        <div className="bg-nestly-purple rounded-3xl p-6 flex flex-col justify-between w-[280px] md:w-[320px] h-[460px] shrink-0">
-          <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium">
+        <div className={"bg-nestly-purple rounded-3xl p-5 md:p-6 flex flex-col justify-between shrink-0 " + CARD_SIZE}>
+          <span className="border border-black rounded-full px-4 py-2 w-fit text-xs md:text-sm font-medium">
             Instagram
           </span>
-          <h2 className="font-display font-bold text-4xl leading-tight">
+          <h2 className="font-display font-bold text-2xl md:text-4xl leading-tight">
             Staying
             <br />
             connected
@@ -90,21 +92,21 @@ export default function StayingConnected() {
 
         <div className="flex-1 min-w-0 overflow-hidden">
           <div className="flex gap-4 cards-marquee-track">
-            {doubled.map((item, i) => (
-              <MovingCard item={item} key={i} />
-            ))}
+            {doubled.map(function (item, i) {
+              return <MovingCard item={item} key={i} />;
+            })}
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-4 mt-4">
-        <div className="bg-nestly-red rounded-full px-8 py-5 flex items-center justify-center">
-          <span className="font-display font-bold text-lg whitespace-nowrap">Join our newsletter</span>
+      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-3 md:gap-4 mt-4">
+        <div className="bg-nestly-red rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-center">
+          <span className="font-display font-bold text-base md:text-lg whitespace-nowrap">Join our newsletter</span>
         </div>
-        <div className="bg-nestly-orange rounded-full px-8 py-5 flex items-center">
+        <div className="bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center">
           <span className="text-sm">Your email here</span>
         </div>
-        <button className="bg-nestly-black rounded-full w-16 h-16 flex items-center justify-center self-center md:self-auto">
+        <button className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center self-center md:self-auto mx-auto md:mx-0">
           <ArrowDiagonal />
         </button>
       </div>
