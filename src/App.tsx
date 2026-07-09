@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
+import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import Locations from "./components/sections/Locations";
 import FeatureGrid from "./components/sections/FeatureGrid";
 import StudentLiving from "./components/sections/StudentLiving";
 import Community from "./components/sections/Community";
+import WhatDefinesUs from "./components/sections/WhatDefinesUs";
+import StayingConnected from "./components/sections/StayingConnected";
 
 function App() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -47,6 +50,9 @@ function App() {
           <FeatureGrid />
           <StudentLiving />
           <Community />
+          <WhatDefinesUs />
+          <StayingConnected />
+          <Footer />
         </div>
       </main>
     </div>

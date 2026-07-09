@@ -55,6 +55,11 @@ body {
   width: max-content;
 }
 
+.cards-marquee-track {
+  animation: marquee-scroll 22s linear infinite;
+  width: max-content;
+}
+
 @keyframes sway {
   0%, 100% {
     transform: rotate(-4deg);
@@ -103,4 +108,30 @@ body {
   transform-box: view-box;
   transform-origin: 300px 300px;
   animation: tunnel-zoom-svg 6s linear infinite;
+}
+
+@keyframes gradient-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.footer-wordmark {
+  background: linear-gradient(
+    90deg,
+    #3B6FE0,
+    #F0A830,
+    #E1503E,
+    #5CB85C,
+    #9B6DF5,
+    #3B6FE0
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-sweep 10s linear infinite;
 }
