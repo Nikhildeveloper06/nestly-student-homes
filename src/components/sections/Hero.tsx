@@ -1,3 +1,5 @@
+import WaveButton from "../ui/WaveButton";
+
 export default function Hero() {
   return (
     <section
@@ -24,15 +26,16 @@ export default function Hero() {
           study and connect.
         </p>
 
-        <a
-          href="#book"
-          className="mt-10 bg-nestly-black text-white font-display font-medium
-            rounded-full px-8 py-4 flex items-center gap-2
-            hover:bg-white hover:text-nestly-black transition-colors duration-300"
-        >
-          Book your Unit
-          <span>-&gt;</span>
-        </a>
+        <div className="mt-10">
+          <WaveButton
+            href="#book"
+            baseClassName="bg-nestly-black rounded-full px-8 py-4 flex items-center gap-2"
+            textClassName="flex items-center gap-2 text-white"
+          >
+            Book your Unit
+            <span>-&gt;</span>
+          </WaveButton>
+        </div>
       </div>
     </section>
   );
