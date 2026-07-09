@@ -17,7 +17,7 @@ export default function UnitGallery({ images }: { images: string[] }) {
   }
 
   return (
-    <div className="relative rounded-3xl overflow-hidden h-[320px] sm:h-[420px] md:h-[520px]">
+    <div className="relative rounded-3xl overflow-hidden border border-black h-[320px] sm:h-[420px] md:h-[520px]">
       <img
         src={images[index]}
         alt=""
