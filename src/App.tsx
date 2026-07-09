@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
 import Footer from "./components/layout/Footer";
+import Preloader from "./components/ui/Preloader";
 import Hero from "./components/sections/Hero";
 import Locations from "./components/sections/Locations";
 import FeatureGrid from "./components/sections/FeatureGrid";
@@ -13,6 +14,17 @@ import StayingConnected from "./components/sections/StayingConnected";
 function App() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(function () {
+      setLoading(false);
+    }, 1800);
+
+    return function () {
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     if (!wrapperRef.current || !contentRef.current) {
@@ -38,24 +50,27 @@ function App() {
   }, []);
 
   return (
-    <div className="flex h-screen bg-nestly-cream overflow-hidden">
-      <Sidebar />
-      <main
-        ref={wrapperRef}
-        className="flex-1 min-w-0 p-4 h-screen overflow-y-auto"
-      >
-        <div ref={contentRef}>
-          <Hero />
-          <Locations />
-          <FeatureGrid />
-          <StudentLiving />
-          <Community />
-          <WhatDefinesUs />
-          <StayingConnected />
-          <Footer />
-        </div>
-      </main>
-    </div>
+    <>
+      <Preloader visible={loading} />
+      <div className="flex h-screen bg-nestly-cream overflow-hidden">
+        <Sidebar />
+        <main
+          ref={wrapperRef}
+          className="flex-1 min-w-0 p-4 h-screen overflow-y-auto"
+        >
+          <div ref={contentRef}>
+            <Hero />
+            <Locations />
+            <FeatureGrid />
+            <StudentLiving />
+            <Community />
+            <WhatDefinesUs />
+            <StayingConnected />
+            <Footer />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
 
