@@ -98,13 +98,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <p className="font-display font-semibold text-nestly-blue text-xs sm:text-sm uppercase tracking-wide">Get in touch</p>
-            <p className="mt-4 text-sm text-white/80">hello@nestly.example</p>
-            <p className="text-sm text-white/80 mt-1">+91 98765 43210</p>
+            <div className="mt-4 flex flex-col sm:flex-row md:flex-col gap-1 sm:gap-6 md:gap-1">
+              <p className="text-sm text-white/80">hello@nestly.example</p>
+              <p className="text-sm text-white/80">+91 98765 43210</p>
+            </div>
             <a
               href="#book"
-              className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-6 py-3.5 text-sm font-display font-medium transition-all duration-300 hover:bg-white hover:scale-105"
+              className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-6 py-3.5 text-sm font-display font-medium whitespace-nowrap transition-all duration-300 hover:bg-white hover:scale-105"
             >
               Book a tour
             </a>
