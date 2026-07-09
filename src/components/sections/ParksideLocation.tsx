@@ -41,7 +41,7 @@ function ArrowDown() {
 export default function ParksideLocation() {
   return (
     <section className="mt-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:items-stretch">
         <div className="bg-nestly-orange border border-black/10 rounded-3xl p-5 md:p-6">
           <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium inline-block">
             Location
@@ -92,8 +92,8 @@ export default function ParksideLocation() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <div className="relative rounded-3xl overflow-hidden bg-nestly-orange border border-black/10 h-[180px]">
+        <div className="flex flex-col gap-4 h-[300px] md:h-full">
+          <div className="relative rounded-3xl overflow-hidden bg-nestly-orange border border-black/10 flex-1">
             <svg
               className="absolute inset-0 w-full h-full opacity-40"
               viewBox="0 0 400 400"
@@ -117,7 +117,7 @@ export default function ParksideLocation() {
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden h-[160px] border border-black/10">
+          <div className="rounded-3xl overflow-hidden flex-1 border border-black/10">
             <img
               src="/images/community/V2.jpeg"
               alt="Nestly Parkside entrance"
