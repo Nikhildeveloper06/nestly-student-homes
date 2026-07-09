@@ -5,6 +5,7 @@ import Hero from "./components/sections/Hero";
 import Locations from "./components/sections/Locations";
 import FeatureGrid from "./components/sections/FeatureGrid";
 import StudentLiving from "./components/sections/StudentLiving";
+import Community from "./components/sections/Community";
 
 function App() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -45,6 +46,7 @@ function App() {
           <Locations />
           <FeatureGrid />
           <StudentLiving />
+          <Community />
         </div>
       </main>
     </div>
