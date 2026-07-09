@@ -84,6 +84,21 @@ export default function Footer() {
           </div>
 
           <div>
+            <p className="font-display font-semibold text-nestly-green text-xs sm:text-sm uppercase tracking-wide">Company</p>
+            <ul className="mt-4 flex flex-col gap-3">
+              {companyLinks.map(function (link) {
+                return (
+                  <li key={link}>
+                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <div>
             <p className="font-display font-semibold text-nestly-blue text-xs sm:text-sm uppercase tracking-wide">Get in touch</p>
             <p className="mt-4 text-sm text-white/80">hello@nestly.example</p>
             <p className="text-sm text-white/80 mt-1">+91 98765 43210</p>
