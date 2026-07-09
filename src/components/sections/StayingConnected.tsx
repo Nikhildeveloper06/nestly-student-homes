@@ -38,16 +38,16 @@ const movingItems: MovingItem[] = [
 
 const doubled = [...movingItems, ...movingItems];
 
-const CARD_SIZE = "w-[220px] h-[320px] sm:w-[260px] sm:h-[380px] md:w-[320px] md:h-[460px]";
+const MOVING_CARD_SIZE = "w-[200px] h-[280px] sm:w-[260px] sm:h-[380px] md:w-[320px] md:h-[460px]";
 
 function MovingCard({ item }: { item: MovingItem }) {
   if (item.type === "blue") {
     return (
-      <div className={"bg-nestly-blue rounded-3xl p-5 md:p-6 flex flex-col justify-between shrink-0 text-white " + CARD_SIZE}>
+      <div className={"bg-nestly-blue rounded-3xl p-5 md:p-6 flex flex-col justify-between shrink-0 text-white " + MOVING_CARD_SIZE}>
         <div className="bg-black/70 rounded-md p-1.5 w-fit">
           <InstagramIcon />
         </div>
-        <p className="font-display font-bold text-base md:text-xl leading-tight">
+        <p className="font-display font-bold text-sm md:text-xl leading-tight">
           {item.text}
         </p>
       </div>
@@ -55,7 +55,7 @@ function MovingCard({ item }: { item: MovingItem }) {
   }
 
   return (
-    <div className={"relative rounded-3xl overflow-hidden shrink-0 " + CARD_SIZE}>
+    <div className={"relative rounded-3xl overflow-hidden shrink-0 " + MOVING_CARD_SIZE}>
       <img
         src={item.src}
         alt=""
@@ -66,7 +66,7 @@ function MovingCard({ item }: { item: MovingItem }) {
       </div>
       {item.caption && (
         <div className="absolute bottom-3 left-3 right-3 bg-nestly-orange rounded-2xl p-3 md:p-4">
-          <p className="font-display font-bold text-sm md:text-lg leading-tight">
+          <p className="font-display font-bold text-xs md:text-lg leading-tight">
             {item.caption}
           </p>
         </div>
@@ -78,19 +78,19 @@ function MovingCard({ item }: { item: MovingItem }) {
 export default function StayingConnected() {
   return (
     <section className="mt-4">
-      <div className="flex gap-4">
-        <div className={"bg-nestly-purple rounded-3xl p-5 md:p-6 flex flex-col justify-between shrink-0 " + CARD_SIZE}>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="bg-nestly-purple rounded-3xl p-5 md:p-6 flex flex-col justify-between w-full h-56 sm:h-64 md:w-[280px] lg:w-[320px] md:h-[460px] md:shrink-0">
           <span className="border border-black rounded-full px-4 py-2 w-fit text-xs md:text-sm font-medium">
             Instagram
           </span>
-          <h2 className="font-display font-bold text-2xl md:text-4xl leading-tight">
+          <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight">
             Staying
             <br />
             connected
           </h2>
         </div>
 
-        <div className="flex-1 min-w-0 overflow-hidden">
+        <div className="w-full md:flex-1 min-w-0 overflow-hidden">
           <div className="flex gap-4 cards-marquee-track">
             {doubled.map(function (item, i) {
               return <MovingCard item={item} key={i} />;
