@@ -46,8 +46,8 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="mt-4">
-      <div className="bg-nestly-black text-white rounded-3xl p-8 md:p-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="bg-nestly-black text-white rounded-3xl p-6 sm:p-8 md:p-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="col-span-2 md:col-span-1">
             <h3 className="font-display font-bold text-2xl">nestly.</h3>
             <p className="text-white/60 text-sm mt-2 max-w-[220px]">
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-display font-semibold text-nestly-orange text-sm uppercase tracking-wide">Explore</p>
+            <p className="font-display font-semibold text-nestly-orange text-xs sm:text-sm uppercase tracking-wide">Explore</p>
             <ul className="mt-4 flex flex-col gap-3">
               {exploreLinks.map(function (link) {
                 return (
@@ -84,22 +84,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-display font-semibold text-nestly-green text-sm uppercase tracking-wide">Company</p>
-            <ul className="mt-4 flex flex-col gap-3">
-              {companyLinks.map(function (link) {
-                return (
-                  <li key={link}>
-                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
-                      {link}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-display font-semibold text-nestly-blue text-sm uppercase tracking-wide">Get in touch</p>
+            <p className="font-display font-semibold text-nestly-blue text-xs sm:text-sm uppercase tracking-wide">Get in touch</p>
             <p className="mt-4 text-sm text-white/80">hello@nestly.example</p>
             <p className="text-sm text-white/80 mt-1">+91 98765 43210</p>
             <a
@@ -111,22 +96,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 text-center">
-          <h2 className="font-display font-bold text-white text-[16vw] md:text-[9vw] leading-none whitespace-nowrap">
+        <div className="mt-10 md:mt-16 text-center overflow-hidden">
+          <h2 className="font-display font-bold text-white text-[15vw] sm:text-[13vw] md:text-[9vw] leading-none whitespace-nowrap">
             nestly.
           </h2>
-          <div className="footer-underline h-1.5 w-40 md:w-56 mx-auto mt-4 rounded-full" />
+          <div className="footer-underline h-1.5 w-32 sm:w-40 md:w-56 mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/50 text-center md:text-left">
             (c) 2026 Nestly Student Homes. Built as a design portfolio project.
           </p>
-          <div className="flex items-center gap-3">
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">FAQs</button>
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">Privacy Policy</button>
-            <button className="border border-white/20 rounded-full px-4 py-2 text-xs text-white/80 hover:bg-white/10 transition-colors">Cookies Policy</button>
-            <a href="#top" className="bg-white/10 rounded-full w-10 h-10 flex items-center justify-center hover:bg-nestly-blue hover:-translate-y-1 transition-all duration-300">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">FAQs</button>
+            <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">Privacy Policy</button>
+            <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">Cookies Policy</button>
+            <a href="#top" className="bg-white/10 rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-nestly-blue hover:-translate-y-1 transition-all duration-300">
               <ArrowUp />
             </a>
           </div>

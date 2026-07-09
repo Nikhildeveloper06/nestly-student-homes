@@ -99,16 +99,19 @@ export default function StayingConnected() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-3 md:gap-4 mt-4">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-4 mt-4">
         <div className="bg-nestly-red rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-center">
           <span className="font-display font-bold text-base md:text-lg whitespace-nowrap">Join our newsletter</span>
         </div>
-        <div className="bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center">
-          <span className="text-sm">Your email here</span>
+
+        <div className="flex gap-3 md:flex-1">
+          <div className="bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center flex-1">
+            <span className="text-sm">Your email here</span>
+          </div>
+          <button className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
+            <ArrowDiagonal />
+          </button>
         </div>
-        <button className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center self-center md:self-auto mx-auto md:mx-0">
-          <ArrowDiagonal />
-        </button>
       </div>
     </section>
   );
