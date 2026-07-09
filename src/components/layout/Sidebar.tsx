@@ -58,7 +58,7 @@ export default function Sidebar() {
       <div className="flex-1 flex flex-col gap-2 min-h-0">
         {navItems.map(function (item) {
           return (
-            
+            <a
               key={item.number}
               href={"#section-" + item.number}
               className={item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white"}
