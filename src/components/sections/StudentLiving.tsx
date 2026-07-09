@@ -1,6 +1,5 @@
 import { Sofa, Laptop, UtensilsCrossed, Bath, Tv, Wind, Wifi, DoorOpen } from "lucide-react";
 import Marquee from "../ui/Marquee";
-import TunnelGrid from "../ui/TunnelGrid";
 
 const leftFeatures = [
   { Icon: Sofa, label: "Fully furnished" },
@@ -70,8 +69,12 @@ export default function StudentLiving() {
           </a>
         </div>
 
-        <div className="rounded-3xl overflow-hidden bg-nestly-cream border border-black/10 min-h-[600px]">
-          <TunnelGrid />
+        <div className="rounded-3xl overflow-hidden border border-black/10 min-h-[600px]">
+          <img
+            src="/images/student-living/V1.jpeg"
+            alt="Nestly student unit"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
