@@ -9,8 +9,8 @@ const carouselImages = [
 
 export default function StudentHomesPage() {
   return (
-    <section className="mt-4 grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-4">
-      <div className="bg-nestly-cream border border-black/10 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[420px] md:min-h-[600px]">
+    <section className="hero-entrance mt-4 grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-4 h-[75vh] md:h-[calc(100vh-2rem)]">
+      <div className="bg-nestly-cream border border-black/10 rounded-3xl p-6 md:p-8 flex flex-col justify-between h-full">
         <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium">
           Nestly Parkside
         </span>
@@ -32,7 +32,7 @@ export default function StudentHomesPage() {
         </div>
       </div>
 
-      <div className="rounded-3xl overflow-hidden min-h-[320px] md:min-h-[600px]">
+      <div className="rounded-3xl overflow-hidden h-full">
         <ImageCarousel images={carouselImages} />
       </div>
     </section>
