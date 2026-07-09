@@ -107,7 +107,7 @@ export default function Footer() {
             <div className="mt-4 w-fit">
               <WaveButton
                 href="#book"
-                baseClassName="rounded-full px-5 py-2.5 bg-nestly-purple text-sm"
+                baseClassName="rounded-full px-6 py-3.5 bg-nestly-purple text-sm"
                 textClassName="text-black"
               >
                 Book a tour
