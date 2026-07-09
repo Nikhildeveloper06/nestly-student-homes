@@ -1,6 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+function CrossfadeImage({ src }: { src: string }) {
+  const [current, setCurrent] = useState(src);
+  const [previous, setPrevious] = useState<string | null>(null);
+  const [fadingIn, setFadingIn] = useState(true);
+
+  useEffect(function () {
+    if (src === current) {
+      return;
+    }
+    setPrevious(current);
+    setCurrent(src);
+    setFadingIn(false);
+
+    const timer = window.setTimeout(function () {
+      setFadingIn(true);
+    }, 30);
+
+    return function () {
+      window.clearTimeout(timer);
+    };
+  }, [src]);
+
+  return (
+    <div className="relative w-full h-full">
+      {previous && (
+        <img
+          src={previous}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
+      <img
+        src={current}
+        alt=""
+        className={
+          "absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out " +
+          (fadingIn ? "opacity-100" : "opacity-0")
+        }
+      />
+    </div>
+  );
+}
+
 export default function UnitGallery({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
   const intervalRef = useRef<number | null>(null);
@@ -49,11 +92,11 @@ export default function UnitGallery({ images }: { images: string[] }) {
   return (
     <div className="relative flex gap-4 h-[280px] sm:h-[360px] md:h-[460px]">
       <div className="flex-[2.6] rounded-3xl overflow-hidden border border-black">
-        <img src={firstImage} alt="" className="w-full h-full object-cover" />
+        <CrossfadeImage src={firstImage} />
       </div>
 
       <div className="flex-1 rounded-3xl overflow-hidden border border-black">
-        <img src={secondImage} alt="" className="w-full h-full object-cover" />
+        <CrossfadeImage src={secondImage} />
       </div>
 
       <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full shadow-lg py-4 px-3 flex flex-col items-center gap-3 z-10">
