@@ -81,3 +81,26 @@ body {
 .float-icon {
   animation: float-y 2.5s ease-in-out infinite;
 }
+
+@keyframes tunnel-zoom-svg {
+  0% {
+    transform: scale(0.05);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.tunnel-ring-svg {
+  transform-box: view-box;
+  transform-origin: 300px 300px;
+  animation: tunnel-zoom-svg 6s linear infinite;
+}

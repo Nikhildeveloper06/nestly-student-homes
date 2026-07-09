@@ -1,8 +1,15 @@
-export default function Marquee({ items }: { items: string[] }) {
+export default function Marquee({
+  items,
+  bgColor,
+}: {
+  items: string[];
+  bgColor?: string;
+}) {
   const doubled = [...items, ...items];
+  const bg = bgColor || "bg-nestly-red";
 
   return (
-    <div className="overflow-hidden bg-nestly-red rounded-2xl py-4">
+    <div className={"overflow-hidden " + bg + " rounded-2xl py-4"}>
       <div className="flex gap-10 marquee-track">
         {doubled.map((item, i) => (
           <span
