@@ -85,7 +85,7 @@ export default function MobileNav() {
         <div className="flex-1 flex flex-col gap-3 overflow-y-auto">
           {navItems.map(function (item) {
             return (
-              
+              <a
                 key={item.number}
                 href={"#section-" + item.number}
                 onClick={function () {
