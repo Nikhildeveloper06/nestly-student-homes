@@ -21,7 +21,7 @@ function PhotoCard({
   position?: string;
 }) {
   return (
-    <div className="rounded-3xl overflow-hidden h-full">
+    <div className="rounded-3xl overflow-hidden min-h-[240px] md:h-full">
       <img
         src={src}
         alt="Nestly community space"
@@ -47,7 +47,7 @@ function ListCard({
     <div
       className={
         color +
-        " rounded-3xl p-5 md:p-6 flex flex-col text-nestly-black h-full overflow-hidden"
+        " rounded-3xl p-5 md:p-6 flex flex-col text-nestly-black min-h-[220px] md:h-full overflow-hidden"
       }
     >
       <h3 className="font-display font-bold text-lg md:text-xl">{title}</h3>
@@ -67,7 +67,7 @@ function ListCard({
 
 function IntroCard() {
   return (
-    <div className="relative bg-nestly-red rounded-3xl p-5 md:p-6 flex flex-col justify-between text-white h-full overflow-hidden">
+    <div className="relative bg-nestly-red rounded-3xl p-5 md:p-6 flex flex-col justify-between text-white min-h-[320px] md:h-full overflow-hidden">
       <span className="border border-white rounded-full px-4 py-2 w-fit text-sm">
         All-Inclusive Living
       </span>
@@ -96,14 +96,7 @@ function IntroCard() {
 export default function FeatureGrid() {
   return (
     <section className="mt-4">
-      <div
-        className="grid gap-4 h-[clamp(480px,75vh,700px)]"
-        style={{
-          gridTemplateColumns: "1fr 1.3fr 1fr",
-          gridTemplateRows: "1fr 1fr",
-          gridTemplateAreas: '"intro photo1 security" "intro community photo2"',
-        }}
-      >
+      <div className="feature-grid">
         <div style={{ gridArea: "intro" }}>
           <IntroCard />
         </div>
