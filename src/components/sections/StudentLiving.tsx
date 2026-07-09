@@ -36,19 +36,19 @@ export default function StudentLiving() {
     <section id="section-02" className="mt-4">
       <Marquee items={amenities} bgColor="bg-nestly-blue" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <div className="rounded-3xl border border-black/10 p-6 md:p-8 flex flex-col gap-6 min-h-[440px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 md:items-stretch">
+        <div className="rounded-3xl border border-black/10 p-6 md:p-8 flex flex-col gap-6 md:gap-8">
           <button className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium">
             Our Units
           </button>
 
           <div>
-            <h2 className="font-display font-bold text-4xl md:text-5xl leading-tight">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
               Student living,
               <br />
               redefined.
             </h2>
-            <p className="mt-4 text-black/80 max-w-md text-sm md:text-base">
+            <p className="mt-3 md:mt-4 text-black/80 max-w-md text-sm md:text-base">
               A new concept in student living - fully furnished, move-in
               ready units designed for comfort and ease. Nestly is more
               than just a place to stay; it's a place to belong. Join a
@@ -58,12 +58,12 @@ export default function StudentLiving() {
           </div>
 
           <div
-            className="grid gap-x-8 gap-y-4"
+            className="grid gap-x-8 gap-y-3 md:gap-y-4"
             style={{ gridTemplateColumns: "1fr 1fr", gridAutoFlow: "column", gridTemplateRows: "repeat(4, auto)" }}
           >
             {leftFeatures.concat(rightFeatures).map(({ Icon, label }) => (
               <div key={label} className="flex items-center gap-3 text-sm">
-                <Icon size={20} strokeWidth={1.5} />
+                <Icon size={18} strokeWidth={1.5} />
                 <span>{label}</span>
               </div>
             ))}
@@ -71,18 +71,18 @@ export default function StudentLiving() {
 
           <a
             href="#units"
-            className="bg-nestly-black text-white rounded-full px-6 py-4 flex items-center justify-center gap-2 font-display font-medium w-fit"
+            className="bg-nestly-black text-white rounded-full px-6 py-3 md:py-4 flex items-center justify-center gap-2 font-display font-medium w-fit"
           >
             Check out our Units
             <ArrowRight />
           </a>
         </div>
 
-        <div className="rounded-3xl overflow-hidden border border-black/10 min-h-[440px]">
+        <div className="relative rounded-3xl overflow-hidden border border-black/10 h-[280px] sm:h-[340px] md:h-auto">
           <img
             src="/images/student-living/V1.jpeg"
             alt="Nestly student unit"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
       </div>
