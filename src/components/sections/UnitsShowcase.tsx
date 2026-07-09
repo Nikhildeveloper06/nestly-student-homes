@@ -1,4 +1,23 @@
-import { Ruler, BedDouble, Sofa, Briefcase, Wifi, Tv, Wind, Home as BalconyIcon, Phone } from "lucide-react";
+import {
+  Ruler,
+  Sofa,
+  Sparkles,
+  BedDouble,
+  LayoutGrid,
+  Briefcase,
+  Refrigerator,
+  Bath,
+  Wifi,
+  Tv,
+  Wind,
+  DoorOpen,
+  Phone,
+  ArrowUpRight,
+  ArrowRight,
+  CheckCircle2,
+  RotateCcw,
+} from "lucide-react";
+import UnitGallery from "../ui/UnitGallery";
 
 const tiers = [
   { name: "Kick Unit", price: "18,000", active: false },
@@ -12,109 +31,120 @@ const galleryImages = [
   "/images/student-living/V1.jpeg",
   "/images/community/V2.jpeg",
   "/images/community/V3.jpeg",
-  "/images/hero/lounge-area.webp",
 ];
 
-const specs = [
+const features = [
   { Icon: Ruler, label: "17-22 sqm" },
-  { Icon: BedDouble, label: "Queen size bed" },
   { Icon: Sofa, label: "Fully furnished" },
+  { Icon: Sparkles, label: "Fully equipped" },
+  { Icon: BedDouble, label: "120cm or 140cm double bed" },
+  { Icon: LayoutGrid, label: "Anatomical mattress" },
   { Icon: Briefcase, label: "Private workspace" },
+  { Icon: Refrigerator, label: "Private kitchen" },
+  { Icon: Bath, label: "Private bathroom" },
   { Icon: Wifi, label: "Super-Fast WiFi" },
   { Icon: Tv, label: "Smart TV" },
-  { Icon: Wind, label: "Air-Conditioning" },
-  { Icon: BalconyIcon, label: "Balcony" },
+  { Icon: Wind, label: "Air-Condition" },
+  { Icon: DoorOpen, label: "Balcony" },
 ];
 
 export default function UnitsShowcase() {
   return (
     <section className="mt-4">
       <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-4">
-        <div className="flex flex-col gap-3">
+        <div className="md:sticky md:top-4 md:self-start flex flex-col gap-3 h-fit">
           {tiers.map(function (tier) {
             return (
               <div
                 key={tier.name}
                 className={
-                  "rounded-2xl p-4 border " +
+                  "rounded-full px-6 py-4 border flex items-center justify-between " +
                   (tier.active
                     ? "bg-nestly-black text-white border-nestly-black"
-                    : "bg-nestly-cream text-black border-black/20")
+                    : "bg-nestly-cream text-black border-black")
                 }
               >
-                <p className="font-display font-bold text-lg">{tier.name}</p>
-                <p className="text-sm mt-1">From (Rs) {tier.price} / month</p>
+                <div>
+                  <p className="font-display font-bold text-lg leading-tight">{tier.name}</p>
+                  <p className="text-sm mt-0.5">From Rs {tier.price} / month</p>
+                </div>
+                {tier.active ? <ArrowRight size={18} /> : <ArrowUpRight size={18} />}
               </div>
             );
           })}
 
-          <div className="bg-nestly-green rounded-2xl p-4 text-center font-display font-bold">
+          <div className="bg-nestly-green rounded-full px-6 py-4 text-center font-display font-bold flex items-center justify-center gap-2">
             Book your Unit
+            <ArrowUpRight size={18} />
           </div>
 
-          <div className="flex items-center gap-2 justify-center text-sm">
+          <div className="flex items-center gap-2 justify-center text-sm mt-2">
             <Phone size={16} />
             <span>Call us at +91 98765 43210</span>
           </div>
         </div>
 
         <div>
-          <div className="sticky top-4 flex gap-3 overflow-x-auto pb-2">
-            {galleryImages.map(function (src, i) {
-              return (
-                <div
-                  key={i}
-                  className="rounded-2xl overflow-hidden shrink-0 w-[160px] h-[180px] md:w-[200px] md:h-[220px]"
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              );
-            })}
-          </div>
+          <UnitGallery images={galleryImages} />
 
-          <div className="mt-6 flex flex-wrap items-center gap-3 justify-between">
+          <div className="mt-6 pt-6 border-t border-black/10 flex flex-wrap items-center gap-3 justify-between">
             <span className="border border-black rounded-full px-4 py-2 text-sm font-medium">
               Description
             </span>
-            <span className="bg-nestly-orange rounded-full px-5 py-2 text-sm font-display font-bold">
-              From Rs 21,000 per month
+            <span className="border border-black rounded-full px-5 py-2 text-sm">
+              From <span className="font-display font-bold">Rs 21,000</span> per month
             </span>
           </div>
 
-          <h2 className="font-display font-bold text-3xl md:text-4xl mt-6">
-            Boost Unit
-          </h2>
-          <p className="text-lg mt-1">The extra boost that you need!</p>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-6 mt-6">
+            <div>
+              <h2 className="font-display font-bold text-3xl md:text-4xl">
+                Boost Unit
+              </h2>
+              <p className="text-lg mt-1">The extra boost that you need!</p>
 
-          <p className="mt-4 text-black/80 text-sm md:text-base">
-            An upgrade changes the game. Boost Units are our most popular
-            choice - balanced, upgraded, and just right. They keep the
-            smart, compact feel of Kick Units, while adding that little
-            something that makes the difference: upper floors, private
-            balconies, more natural light, or better views. Designed to
-            give your everyday an extra boost.
-          </p>
+              <p className="mt-4 text-black/80 text-sm md:text-base">
+                An upgrade that changes the game. Boost Units are our most
+                popular pick - balanced, upgraded, and just right. They
+                keep the smart, compact feel of Kick Units, while adding
+                that little something extra: higher floors, private
+                balconies, more natural light, or better views. Built to
+                give your everyday a little boost.
+              </p>
 
-          <div className="mt-6 bg-nestly-orange rounded-2xl p-4">
-            <p className="font-display font-bold">All-inclusive rent</p>
-            <p className="text-sm mt-1">
-              Your rent covers everything - electricity, water, high-speed
-              WiFi, heating, cooling, shared expenses, plus unlimited
-              access to all Community Living Spaces.
-            </p>
+              <p className="mt-4 text-sm">
+                Need more flexibility? Step up to the{" "}
+                <span className="font-bold underline">Flex Units</span>.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="relative bg-nestly-orange rounded-2xl p-5">
+                <div className="absolute -top-2 -right-2 bg-nestly-green rounded-full p-1">
+                  <CheckCircle2 size={18} className="text-white" fill="currentColor" />
+                </div>
+                <p className="font-display font-bold">All-inclusive rent</p>
+                <p className="text-sm mt-2">
+                  Your rent covers everything - electricity, water,
+                  high-speed WiFi, heating, cooling, shared expenses, plus
+                  unlimited access to all Community Living Spaces.
+                </p>
+              </div>
+
+              <div className="bg-nestly-purple rounded-full px-5 py-3 flex items-center justify-center gap-2 font-display font-medium">
+                360 view
+                <RotateCcw size={16} />
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
-            {specs.map(function (spec) {
-              const Icon = spec.Icon;
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5 mt-8 pt-6 border-t border-black/10">
+            {features.map(function (feature) {
+              const Icon = feature.Icon;
               return (
-                <div key={spec.label} className="flex items-center gap-2 text-sm">
-                  <Icon size={18} strokeWidth={1.5} />
-                  <span>{spec.label}</span>
+                <div key={feature.label} className="flex items-center gap-3 text-sm">
+                  <Icon size={20} strokeWidth={1.5} className="text-nestly-purple" />
+                  <span>{feature.label}</span>
                 </div>
               );
             })}
@@ -122,9 +152,13 @@ export default function UnitsShowcase() {
 
           <p className="mt-6 pt-4 border-t border-black/10 text-xs text-black/60">
             Each unit features: Anatomical mattress, mattress protector,
-            two pillows, fridge, electric oven, kettle, toaster, dish
-            rack, smart TV, desk chair, desk lamp, air-conditioning,
-            curtains, full-length mirror and decorative wall art.
+            two pillows, fridge, electric oven, electric hob, extractor
+            hood, kettle, toaster, dish rack, smart TV, desk chair, desk
+            lamp, air-conditioning, bathroom equipment, curtains, electric
+            shutters, and decorative wall art.
+          </p>
+          <p className="mt-2 text-xs text-black/50">
+            *Available in select units only.
           </p>
         </div>
       </div>
