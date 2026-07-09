@@ -1,74 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-function SlideImage({ src, direction }: { src: string; direction: "next" | "prev" }) {
-  const [current, setCurrent] = useState(src);
-  const [previous, setPrevious] = useState<string | null>(null);
-  const [animating, setAnimating] = useState(false);
-
-  useEffect(function () {
-    if (src === current) {
-      return;
-    }
-    setPrevious(current);
-    setCurrent(src);
-    setAnimating(false);
-
-    const timer = window.setTimeout(function () {
-      setAnimating(true);
-    }, 20);
-
-    const cleanupTimer = window.setTimeout(function () {
-      setPrevious(null);
-    }, 620);
-
-    return function () {
-      window.clearTimeout(timer);
-      window.clearTimeout(cleanupTimer);
-    };
-  }, [src]);
-
-  const enterFrom = direction === "next" ? "translate-x-full" : "-translate-x-full";
-  const exitTo = direction === "next" ? "-translate-x-full" : "translate-x-full";
-
-  return (
-    <div className="relative w-full h-full overflow-hidden">
-      {previous && (
-        <img
-          src={previous}
-          alt=""
-          className={
-            "absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-in-out " +
-            (animating ? exitTo : "translate-x-0")
-          }
-        />
-      )}
-      <img
-        src={current}
-        alt=""
-        className={
-          "absolute inset-0 w-full h-full object-cover transition-transform duration-600 ease-in-out " +
-          (previous ? (animating ? "translate-x-0" : enterFrom) : "translate-x-0")
-        }
-      />
-    </div>
-  );
-}
-
 export default function UnitGallery({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
   const intervalRef = useRef<number | null>(null);
 
   function next() {
-    setDirection("next");
     setIndex(function (prev) {
       return (prev + 1) % images.length;
     });
   }
 
-  function prevSlide() {
-    setDirection("prev");
+  function prev() {
     setIndex(function (prev) {
       return (prev - 1 + images.length) % images.length;
     });
@@ -96,21 +39,38 @@ export default function UnitGallery({ images }: { images: string[] }) {
   }
 
   function handlePrev() {
-    prevSlide();
+    prev();
     startTimer();
   }
 
-  const firstImage = images[index];
-  const secondImage = images[(index + 1) % images.length];
-
   return (
-    <div className="relative flex gap-4 h-[280px] sm:h-[360px] md:h-[460px]">
-      <div className="flex-[2.6] rounded-3xl overflow-hidden border border-black">
-        <SlideImage src={firstImage} direction={direction} />
-      </div>
-
-      <div className="flex-1 rounded-3xl overflow-hidden border border-black">
-        <SlideImage src={secondImage} direction={direction} />
+    <div className="relative h-[280px] sm:h-[360px] md:h-[460px]">
+      <div className="relative w-full h-full overflow-hidden rounded-3xl">
+        <div
+          className="flex h-full transition-transform duration-700 ease-in-out"
+          style={{
+            width: images.length * 100 + "%",
+            transform: "translateX(-" + index * (100 / images.length) + "%)",
+          }}
+        >
+          {images.map(function (src, i) {
+            const secondSrc = images[(i + 1) % images.length];
+            return (
+              <div
+                key={i}
+                className="flex gap-4 h-full shrink-0"
+                style={{ width: 100 / images.length + "%" }}
+              >
+                <div className="flex-[2.6] rounded-3xl overflow-hidden border border-black">
+                  <img src={src} alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1 rounded-3xl overflow-hidden border border-black">
+                  <img src={secondSrc} alt="" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full shadow-lg py-4 px-3 flex flex-col items-center gap-3 z-10">
