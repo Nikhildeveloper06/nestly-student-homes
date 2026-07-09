@@ -168,3 +168,7 @@ body {
     height: clamp(480px, 75vh, 700px);
   }
 }
+
+.page-enter {
+  animation: slide-up-in 0.7s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
