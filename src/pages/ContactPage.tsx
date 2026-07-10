@@ -3,9 +3,9 @@ import ContactNewsletter from "../components/sections/ContactNewsletter";
 
 export default function ContactPage() {
   return (
-    <div className="page-enter">
+    <>
       <ContactSection />
       <ContactNewsletter />
-    </div>
+    </>
   );
 }

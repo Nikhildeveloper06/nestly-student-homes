@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import WaveButton from "../ui/WaveButton";
 
 const navItems = [
@@ -13,6 +13,15 @@ function ArrowIcon() {
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <line x1="7" y1="17" x2="17" y2="7" />
       <polyline points="7 7 17 7 17 17" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="13 6 19 12 13 18" />
     </svg>
   );
 }
@@ -45,6 +54,8 @@ function WhatsAppIcon() {
 }
 
 export default function Sidebar() {
+  const location = useLocation();
+
   return (
     <aside className="sidebar-entrance hidden md:flex md:flex-col w-48 shrink-0 gap-2 p-3 h-screen">
       <div className="mb-2">
@@ -60,12 +71,13 @@ export default function Sidebar() {
 
       <div className="flex-1 flex flex-col gap-2 min-h-0">
         {navItems.map(function (item) {
+          const isActive = item.to && location.pathname === item.to;
           const className = item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white";
           const inner = (
             <>
               <div className="flex justify-between items-start">
                 <span className="font-medium text-sm">{item.number}</span>
-                <ArrowIcon />
+                {isActive ? <ArrowRightIcon /> : <ArrowIcon />}
               </div>
               <span className="text-sm leading-tight font-medium">{item.label}</span>
             </>
