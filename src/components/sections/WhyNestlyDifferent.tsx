@@ -70,10 +70,7 @@ function Column({
       onMouseLeave={onLeave}
     >
       <div
-        className={
-          data.color +
-          " rounded-3xl p-6 overflow-hidden transition-all duration-500 ease-in-out flex-none"
-        }
+        className={data.color + " smooth-expand rounded-3xl p-6 overflow-hidden flex-none"}
         style={{ height: hovered ? "420px" : "128px" }}
       >
         <div className="flex items-start gap-3">
@@ -85,30 +82,29 @@ function Column({
           </h3>
         </div>
 
-        <div
-          className={
-            "flex flex-col gap-3 mt-6 transition-opacity duration-300 " +
-            (hovered ? "opacity-100 delay-150" : "opacity-0")
-          }
-        >
-          {data.items.map(function (item) {
-            return (
-              <p
-                key={item}
-                className="text-sm border-b border-black/20 pb-3"
-              >
-                {item}
-              </p>
-            );
-          })}
-        </div>
+        {hovered && (
+          <div className="flex flex-col gap-3 mt-6">
+            {data.items.map(function (item, i) {
+              return (
+                <p
+                  key={item}
+                  className="fade-slide-item text-sm border-b border-black/20 pb-3"
+                  style={{ animationDelay: 0.15 + i * 0.06 + "s" }}
+                >
+                  {item}
+                </p>
+              );
+            })}
+          </div>
+        )}
       </div>
 
-      <div className="flex-1 min-h-0 rounded-3xl overflow-hidden border border-black transition-all duration-500 ease-in-out">
+      <div className="smooth-expand flex-1 min-h-0 rounded-3xl overflow-hidden border border-black">
         <img
           src={data.image}
           alt={data.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
+          style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
         />
       </div>
     </div>
