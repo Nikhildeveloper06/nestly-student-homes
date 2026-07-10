@@ -1,4 +1,30 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+function InstagramIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="black" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="black">
+      <path d="M13.5 21v-7.5h2.5l0.5 -3h-3v-1.9c0 -0.9 0.3 -1.6 1.6 -1.6h1.6v-2.7c-0.3 0 -1.3 -0.1 -2.4 -0.1c-2.4 0 -4 1.5 -4 4.1v2.2h-2.7v3h2.7v7.5z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="black">
+      <path d="M6.5 8.5h-3v11h3v-11z" />
+      <circle cx="5" cy="5" r="2" />
+      <path d="M11.5 8.5h-3v11h3v-5.5c0 -1.5 0.8 -2.5 2.2 -2.5c1.3 0 1.8 0.9 1.8 2.5v5.5h3v-6c0 -3 -1.6 -4.5 -3.9 -4.5c-1.8 0 -2.6 1 -3.1 1.7v-1.2z" />
+    </svg>
+  );
+}
 
 function TransitDot({ top, left }: { top: string; left: string }) {
   return (
@@ -65,9 +91,9 @@ export default function ContactSection() {
                 </h2>
               </div>
               <div className="flex gap-4">
-                <Instagram size={22} strokeWidth={1.5} />
-                <Facebook size={22} strokeWidth={1.5} />
-                <Linkedin size={22} strokeWidth={1.5} />
+                <InstagramIcon />
+                <FacebookIcon />
+                <LinkedinIcon />
               </div>
             </div>
 
