@@ -26,67 +26,33 @@ function LinkedinIcon() {
   );
 }
 
-function TransitDot({ top, left }: { top: string; left: string }) {
-  return (
-    <div
-      className="absolute w-5 h-5 rounded-full bg-white border-2 border-black/60 flex items-center justify-center text-black/60 text-[10px] font-bold"
-      style={{ top, left }}
-    >
-      T
-    </div>
-  );
-}
-
-function LocationPin() {
-  return (
-    <div
-      className="w-5 h-5 bg-nestly-black shrink-0"
-      style={{
-        clipPath: "polygon(50% 100%, 0 40%, 0 0, 100% 0, 100% 40%)",
-      }}
-    />
-  );
-}
-
 export default function ContactSection() {
   return (
     <section className="page-enter mt-4">
-      <div className="bg-nestly-green rounded-3xl p-4 md:p-6 md:h-[calc(100vh-6.5rem)]">
+      <div className="bg-[#07aa3c] rounded-3xl p-4 md:p-6 md:h-[calc(100vh-6.5rem)]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
           <div className="flex flex-col gap-4 h-full">
             <div
-              className="stagger-in relative bg-white rounded-3xl overflow-hidden flex-1 min-h-[200px]"
+              className="stagger-in relative rounded-3xl overflow-hidden flex-1 min-h-[200px] border border-black/10"
               style={{ animationDelay: "0s" }}
             >
-              <svg
-                className="absolute inset-0 w-full h-full opacity-70"
-                viewBox="0 0 400 400"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,60 H400 M0,140 H400 M0,220 H400 M0,300 H400 M60,0 V400 M140,0 V400 M220,0 V400 M300,0 V400"
-                  stroke="#111111"
-                  strokeWidth="1.5"
-                  strokeOpacity="0.15"
-                />
-              </svg>
-              <TransitDot top="15%" left="25%" />
-              <TransitDot top="35%" left="60%" />
-              <TransitDot top="65%" left="20%" />
-              <TransitDot top="70%" left="70%" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <span className="bg-nestly-orange rounded-full px-3 py-1.5 text-xs font-bold mb-2 whitespace-nowrap">
-                  Nestly Parkside
-                </span>
-                <LocationPin />
-              </div>
-              <span className="absolute bottom-3 left-4 text-black/40 text-xs font-medium">
-                Map preview
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112203.86966298782!2d77.43359437927084!3d28.498485821727773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea64b8f89aef%3A0xec0ccabb5317962e!2sGreater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1783705404196!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 w-full h-full"
+              />
+              <span className="absolute top-4 left-4 bg-nestly-orange rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap pointer-events-none">
+                Nestly Parkside
               </span>
             </div>
 
             <div
-              className="stagger-in relative bg-nestly-green rounded-3xl overflow-hidden flex-1 min-h-[180px] border border-black/10"
+              className="stagger-in relative bg-[#1ce248] rounded-3xl overflow-hidden flex-1 min-h-[180px] border border-black/10"
               style={{ animationDelay: "0.15s" }}
             >
               <div className="h-full flex flex-col justify-between p-5 pr-[38%] md:pr-[35%]">
@@ -102,7 +68,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="absolute right-0 top-0 bottom-0 w-[38%] md:w-[35%] bg-nestly-cream p-5 flex flex-col justify-between">
+              <div className="absolute right-0 top-0 bottom-0 w-[38%] md:w-[35%] bg-nestly-cream border-l border-black/10 rounded-r-3xl p-5 flex flex-col justify-between">
                 <h3 className="font-display font-bold text-xl md:text-2xl">nestly.</h3>
                 <div>
                   <p className="font-display font-bold text-[11px] md:text-xs">hello@nestly.example</p>
@@ -113,7 +79,7 @@ export default function ContactSection() {
           </div>
 
           <div
-            className="stagger-in bg-white rounded-3xl p-5 md:p-6 h-full flex flex-col overflow-hidden"
+            className="stagger-in bg-white border border-black/10 rounded-3xl p-5 md:p-6 h-full flex flex-col overflow-hidden"
             style={{ animationDelay: "0.3s" }}
           >
             <span className="border border-black rounded-full px-3 py-1.5 w-fit text-xs font-medium inline-block">
