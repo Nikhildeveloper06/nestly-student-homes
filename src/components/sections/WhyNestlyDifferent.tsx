@@ -1,4 +1,4 @@
-import { Sparkles, Heart, ShieldCheck } from "lucide-react";
+import { useState } from "react";
 
 function ArrowDown() {
   return (
@@ -9,19 +9,115 @@ function ArrowDown() {
   );
 }
 
-const highlights = [
-  { Icon: Sparkles, text: "Practical ease and convenience, every day", color: "bg-nestly-orange" },
-  { Icon: Heart, text: "A new take on student living", color: "bg-nestly-green" },
-  { Icon: ShieldCheck, text: "Security and comfort from day one", color: "bg-nestly-blue" },
+const columns = [
+  {
+    color: "bg-nestly-orange",
+    number: "1",
+    title: "Practical ease and convenience, every day",
+    image: "/images/hero/lounge-area.webp",
+    items: [
+      "All-inclusive rent - covering electricity, water, internet, heating/cooling and shared expenses.",
+      "Smooth check-in and check-out, with our team by your side.",
+      "Guided tours, in person or online.",
+      "We take care of your unit - fast support, whenever you need it.",
+      "Simple monthly payments, all done digitally.",
+      "A two-month deposit secures your spot.",
+    ],
+  },
+  {
+    color: "bg-nestly-green",
+    number: "2",
+    title: "A new take on student living",
+    image: "/images/student-living/V1.jpeg",
+    items: [
+      "Community-first approach",
+      "Seamless student living experience",
+      "Smart technology",
+      "Thoughtfully designed spaces",
+      "Sustainable living",
+    ],
+  },
+  {
+    color: "bg-nestly-blue",
+    number: "3",
+    title: "Security and comfort from day one",
+    image: "/images/community/V2.jpeg",
+    items: [
+      "24/7 Security",
+      "24/7 Support",
+      "Fast & reliable maintenance",
+      "24/7 Hot water",
+      "Super-Fast WiFi",
+    ],
+  },
 ];
 
-const photos = [
-  "/images/hero/lounge-area.webp",
-  "/images/student-living/V1.jpeg",
-  "/images/community/V3.jpeg",
-];
+function Column({
+  data,
+  hovered,
+  onEnter,
+  onLeave,
+}: {
+  data: (typeof columns)[number];
+  hovered: boolean;
+  onEnter: () => void;
+  onLeave: () => void;
+}) {
+  return (
+    <div
+      className="flex flex-col h-[560px] gap-4"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      <div
+        className={
+          data.color +
+          " rounded-3xl p-6 overflow-hidden transition-all duration-500 ease-in-out flex-none"
+        }
+        style={{ height: hovered ? "420px" : "128px" }}
+      >
+        <div className="flex items-start gap-3">
+          <span className="bg-nestly-black text-white rounded-full w-8 h-8 flex items-center justify-center font-display font-bold text-sm shrink-0">
+            {data.number}
+          </span>
+          <h3 className="font-display font-bold text-xl md:text-2xl leading-tight">
+            {data.title}
+          </h3>
+        </div>
+
+        <div
+          className={
+            "flex flex-col gap-3 mt-6 transition-opacity duration-300 " +
+            (hovered ? "opacity-100 delay-150" : "opacity-0")
+          }
+        >
+          {data.items.map(function (item) {
+            return (
+              <p
+                key={item}
+                className="text-sm border-b border-black/20 pb-3"
+              >
+                {item}
+              </p>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex-1 min-h-0 rounded-3xl overflow-hidden border border-black transition-all duration-500 ease-in-out">
+        <img
+          src={data.image}
+          alt={data.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function WhyNestlyDifferent() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section className="mt-4">
       <div className="bg-nestly-red rounded-3xl py-4 px-4 md:px-8 flex items-center justify-between">
@@ -38,27 +134,20 @@ export default function WhyNestlyDifferent() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
-        {highlights.map(function (item) {
-          const Icon = item.Icon;
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        {columns.map(function (col, i) {
           return (
-            <div
-              key={item.text}
-              className={item.color + " rounded-full px-5 py-4 flex items-center gap-3 border border-black"}
-            >
-              <Icon size={20} strokeWidth={1.5} />
-              <span className="text-sm font-medium">{item.text}</span>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        {photos.map(function (src, i) {
-          return (
-            <div key={i} className="rounded-3xl overflow-hidden h-[220px] border border-black">
-              <img src={src} alt="" className="w-full h-full object-cover" />
-            </div>
+            <Column
+              key={col.number}
+              data={col}
+              hovered={hoveredIndex === i}
+              onEnter={function () {
+                setHoveredIndex(i);
+              }}
+              onLeave={function () {
+                setHoveredIndex(null);
+              }}
+            />
           );
         })}
       </div>
