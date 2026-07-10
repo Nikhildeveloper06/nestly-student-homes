@@ -86,7 +86,7 @@ export default function FAQs() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
         {faqs.map(function (faq, i) {
           const isOpen = openIndex === i;
           return (
@@ -96,8 +96,8 @@ export default function FAQs() {
                 toggle(i);
               }}
               className={
-                "text-left bg-white border rounded-3xl p-6 transition-colors duration-300 " +
-                (isOpen ? "border-black" : "border-black/40 hover:border-black")
+                "text-left border border-black rounded-3xl p-6 transition-colors duration-300 " +
+                (isOpen ? "bg-white" : "bg-transparent hover:bg-white/50")
               }
             >
               <div className="flex items-start justify-between gap-4">
