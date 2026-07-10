@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, X } from "lucide-react";
 
 function ArrowDown() {
   return (
@@ -12,34 +12,44 @@ function ArrowDown() {
 
 const faqs = [
   {
-    category: "Reservation",
+    category: "Practicalities",
     question: "How can I book a unit at Nestly?",
-    answer: "You can book directly through our website by choosing your preferred unit and completing the reservation form, or by calling our team.",
+    answer: "Simply fill out the interest form on our website and our team will contact you as soon as possible. Alternatively, you can call us at +91 98765 43210.",
   },
   {
     category: "About Units",
-    question: "What does all-inclusive rent mean?",
+    question: "What does all-inclusive living mean at Nestly?",
     answer: "Your rent covers electricity, water, high-speed WiFi, heating, cooling and shared expenses - no hidden fees.",
   },
   {
-    category: "Reservation",
-    question: "Can I cancel my booking before check-in?",
-    answer: "Yes, cancellations made before your move-in date follow the terms outlined in your booking confirmation.",
+    category: "Practicalities",
+    question: "Can I schedule a tour before booking?",
+    answer: "Yes, you can book an in-person or virtual tour directly through our website before confirming your unit.",
   },
   {
-    category: "About Units",
-    question: "What documents are needed to confirm a booking?",
+    category: "Practicalities",
+    question: "What documents are required to proceed with a booking?",
     answer: "A valid ID or passport and proof of enrollment at a nearby institution are typically required.",
   },
   {
-    category: "Moving & Moving Out",
-    question: "What can I do if the deposit isn't returned in time?",
-    answer: "Reach out to our support team directly - deposits are processed within a set number of days after checkout.",
+    category: "Practicalities",
+    question: "Who signs the contract and how?",
+    answer: "The contract can be signed digitally by the tenant or their guardian, depending on age and local requirements.",
+  },
+  {
+    category: "Practicalities",
+    question: "How are rent payments made?",
+    answer: "Rent is paid monthly via bank transfer or card, with reminders sent ahead of each due date.",
+  },
+  {
+    category: "Moving In & Moving Out",
+    question: "When and how is the deposit returned after move-out?",
+    answer: "Deposits are processed and returned within a set number of days after your final move-out inspection.",
   },
   {
     category: "Pricing & What's Included",
-    question: "How are rent payments made?",
-    answer: "Rent is paid monthly via bank transfer or card, with reminders sent ahead of each due date.",
+    question: "Is Nestly more expensive than a regular apartment?",
+    answer: "Nestly is priced to match the market while including furnishing, utilities and community spaces that would normally cost extra elsewhere.",
   },
   {
     category: "Eligibility & Audience",
@@ -47,7 +57,7 @@ const faqs = [
     answer: "Nestly is designed for university and college students looking for fully furnished, community-focused housing.",
   },
   {
-    category: "Safety & Convenience",
+    category: "Safety & Operations",
     question: "What security measures are in place?",
     answer: "24/7 CCTV surveillance, night patrol, and smart access control keep every unit secure around the clock.",
   },
@@ -64,12 +74,12 @@ export default function FAQs() {
 
   return (
     <section className="mt-4">
-      <div className="flex items-center justify-between mb-4">
+      <div className="bg-white rounded-3xl py-6 px-6 md:px-10 flex items-center justify-between mb-4">
         <div className="flex items-end gap-1.5">
           <ArrowDown />
           <ArrowDown />
         </div>
-        <h2 className="font-display font-bold text-2xl sm:text-3xl">FAQs</h2>
+        <h2 className="font-display font-bold text-3xl sm:text-4xl">FAQs</h2>
         <div className="flex items-end gap-1.5">
           <ArrowDown />
           <ArrowDown />
@@ -85,23 +95,27 @@ export default function FAQs() {
               onClick={function () {
                 toggle(i);
               }}
-              className="text-left bg-white border border-black/10 rounded-2xl p-4 hover:border-black/30 transition-colors"
+              className={
+                "text-left bg-white border rounded-3xl p-6 transition-colors duration-300 " +
+                (isOpen ? "border-black" : "border-black/40 hover:border-black")
+              }
             >
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[11px] text-black/50 uppercase tracking-wide">
+                  <p className="text-sm font-semibold text-nestly-blue">
                     {faq.category}
                   </p>
-                  <p className="font-display font-semibold text-sm mt-1">
+                  <p className="font-display font-bold text-lg mt-1">
                     {faq.question}
                   </p>
                 </div>
                 <span className="shrink-0 mt-1">
-                  {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                  {isOpen ? <X size={26} strokeWidth={2.5} /> : <Plus size={26} strokeWidth={2.5} />}
                 </span>
               </div>
+
               {isOpen && (
-                <p className="text-sm text-black/70 mt-3">{faq.answer}</p>
+                <p className="text-base text-black/80 mt-6">{faq.answer}</p>
               )}
             </button>
           );
