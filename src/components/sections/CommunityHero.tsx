@@ -10,7 +10,7 @@ const marqueeItems = [
 export default function CommunityHero() {
   return (
     <section className="community-hero-enter mt-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[560px] md:h-[620px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[75vh] md:h-[calc(100vh-6.5rem)]">
         <div className="rounded-3xl overflow-hidden border border-black/10 h-full">
           <img
             src="/images/community/V3.jpeg"
