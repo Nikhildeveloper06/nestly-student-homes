@@ -68,7 +68,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="absolute right-0 top-0 bottom-0 w-[38%] md:w-[35%] bg-nestly-cream border-l border-black/10 rounded-r-3xl p-5 flex flex-col justify-between">
+              <div className="absolute right-0 top-0 bottom-0 w-[38%] md:w-[35%] bg-nestly-cream border-l border-black/10 rounded-3xl p-5 flex flex-col justify-between">
                 <h3 className="font-display font-bold text-xl md:text-2xl">nestly.</h3>
                 <div>
                   <p className="font-display font-bold text-[11px] md:text-xs">hello@nestly.example</p>
