@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
 import MobileNav from "./components/layout/MobileNav";
@@ -11,10 +11,12 @@ export default function Layout() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(function () {
     const timer = setTimeout(function () {
       setLoading(false);
+      navigate("/", { replace: true });
     }, 2100);
 
     return function () {

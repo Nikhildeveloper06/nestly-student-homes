@@ -86,23 +86,23 @@ export default function ContactSection() {
             </div>
 
             <div
-              className="stagger-in grid grid-cols-[1.3fr_1fr] gap-4 h-[220px] md:h-[260px]"
+              className="stagger-in flex items-end justify-between gap-4"
               style={{ animationDelay: "0.15s" }}
             >
-              <div className="bg-nestly-green rounded-3xl p-6 flex flex-col justify-between border border-black/10">
-                <h2 className="font-display font-bold text-2xl md:text-3xl leading-tight text-black">
+              <div>
+                <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight text-black">
                   Let's
                   <br />
                   Connect!
                 </h2>
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-6">
                   <InstagramIcon />
                   <FacebookIcon />
                   <LinkedinIcon />
                 </div>
               </div>
 
-              <div className="bg-nestly-cream rounded-3xl p-6 flex flex-col justify-between">
+              <div className="bg-nestly-cream rounded-3xl p-6 w-[200px] md:w-[220px] flex flex-col justify-between h-[200px] md:h-[220px] shrink-0">
                 <h3 className="font-display font-bold text-2xl md:text-3xl">nestly.</h3>
                 <div>
                   <p className="font-display font-bold text-xs md:text-sm">hello@nestly.example</p>
