@@ -4,6 +4,7 @@ import UnitsShowcase from "../components/sections/UnitsShowcase";
 import CommunityLivingSpaces from "../components/sections/CommunityLivingSpaces";
 import WhyNestlyDifferent from "../components/sections/WhyNestlyDifferent";
 import FAQs from "../components/sections/FAQs";
+import MoreAnswers from "../components/sections/MoreAnswers";
 
 const carouselImages = [
   "/images/hero/lounge-area.webp",
@@ -48,6 +49,7 @@ export default function StudentHomesPage() {
       <CommunityLivingSpaces />
       <WhyNestlyDifferent />
       <FAQs />
+      <MoreAnswers />
     </>
   );
 }

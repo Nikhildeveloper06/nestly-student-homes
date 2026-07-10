@@ -109,14 +109,24 @@ export default function FAQs() {
                     {faq.question}
                   </p>
                 </div>
-                <span className="shrink-0 mt-1">
+                <span className="shrink-0 mt-1 transition-transform duration-300" style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}>
                   {isOpen ? <X size={26} strokeWidth={2.5} /> : <Plus size={26} strokeWidth={2.5} />}
                 </span>
               </div>
 
-              {isOpen && (
-                <p className="text-base text-black/80 mt-6">{faq.answer}</p>
-              )}
+              <div
+                className="grid transition-[grid-template-rows] duration-500 ease-in-out"
+                style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+              >
+                <div className="overflow-hidden">
+                  <p
+                    className="text-base text-black/80 pt-6 transition-opacity duration-300"
+                    style={{ opacity: isOpen ? 1 : 0 }}
+                  >
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
             </button>
           );
         })}
