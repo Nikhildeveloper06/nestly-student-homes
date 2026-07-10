@@ -9,7 +9,7 @@ const marqueeItems = [
 
 export default function CommunityHero() {
   return (
-    <section className="page-enter mt-4">
+    <section className="community-hero-enter mt-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[560px] md:h-[620px]">
         <div className="rounded-3xl overflow-hidden border border-black/10 h-full">
           <img
