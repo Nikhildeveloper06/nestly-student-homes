@@ -5,7 +5,7 @@ const navItems = [
   { number: "01", label: "Student Homes", color: "bg-nestly-blue", to: "/student-homes" },
   { number: "02", label: "Our way of living", color: "bg-nestly-orange", href: "/#section-02" },
   { number: "03", label: "Community", color: "bg-nestly-red", to: "/community" },
-  { number: "04", label: "Contact", color: "bg-nestly-green", href: "/#section-04" },
+  { number: "04", label: "Contact", color: "bg-nestly-green", to: "/contact" },
 ];
 
 function ArrowIcon() {
