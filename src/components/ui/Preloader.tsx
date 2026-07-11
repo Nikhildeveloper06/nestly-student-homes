@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const tagline = "Unique Student Homes";
 
 const images = [
-  "/images/hero/lounge-area.webp",
+  "/images/gallery/S2.webp",
   "/images/student-living/V1.jpeg",
   "/images/community/V2.jpeg",
   "/images/community/V3.jpeg",

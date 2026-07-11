@@ -30,7 +30,7 @@ const movingItems: MovingItem[] = [
     caption: "5 things that make hostel life so much easier.",
   },
   { type: "photo", src: "/images/community/V3.jpeg" },
-  { type: "photo", src: "/images/hero/lounge-area.webp" },
+  { type: "photo", src: "/images/gallery/S4.webp" },
   { type: "photo", src: "/images/gallery/S7.webp" },
   { type: "video", src: "/videos/video1.mp4" },
   {

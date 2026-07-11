@@ -93,7 +93,7 @@ export default function TunnelGrid() {
                 </clipPath>
               </defs>
               <image
-                href="/images/hero/lounge-area.webp"
+                href="/images/gallery/S1.webp"
                 x={box.x}
                 y={box.y}
                 width={box.width}

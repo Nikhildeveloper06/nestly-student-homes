@@ -7,7 +7,7 @@ const moments = [
     label: "Morning",
     Icon: Sunrise,
     color: "bg-nestly-orange",
-    image: "/images/hero/lounge-area.webp",
+    image: "/images/gallery/S6.webp",
     text: "Slow starts or early lectures - your kitchen, your coffee, your pace. No queues, no shared schedules to work around.",
   },
   {

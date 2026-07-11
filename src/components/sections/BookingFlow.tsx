@@ -19,7 +19,7 @@ const durations = ["6 months", "9 months", "12 months"];
 const steps = ["Choose Unit", "Move-in Details", "Your Info", "Confirm"];
 
 const stepImages = [
-  "/images/hero/lounge-area.webp",
+  "/images/gallery/S5.webp",
   "/images/student-living/V1.jpeg",
   "/images/community/V2.jpeg",
   "/images/community/V3.jpeg",

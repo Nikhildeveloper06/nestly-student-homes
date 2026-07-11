@@ -14,7 +14,7 @@ const columns = [
     color: "bg-nestly-orange",
     number: "1",
     title: "Practical ease and convenience, every day",
-    image: "/images/hero/lounge-area.webp",
+    image: "/images/gallery/S3.webp",
     items: [
       "All-inclusive rent - covering electricity, water, internet, heating/cooling and shared expenses.",
       "Smooth check-in and check-out, with our team by your side.",
