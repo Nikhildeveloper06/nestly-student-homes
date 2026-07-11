@@ -12,6 +12,8 @@ import BookUnitPage from './pages/BookUnitPage.tsx'
 import AboutPage from './pages/AboutPage.tsx'
 import FAQPage from './pages/FAQPage.tsx'
 import CareersPage from './pages/CareersPage.tsx'
+import BlogPage from './pages/BlogPage.tsx'
+import PressPage from './pages/PressPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -27,6 +29,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/press" element={<PressPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

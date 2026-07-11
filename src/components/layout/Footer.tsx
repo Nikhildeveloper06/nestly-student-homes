@@ -47,8 +47,8 @@ const exploreLinks = [
 const companyLinks = [
   { label: "About us", to: "/about-us" },
   { label: "Careers", to: "/careers" },
-  { label: "Blog", to: null },
-  { label: "Press", to: null },
+  { label: "Blog", to: "/blog" },
+  { label: "Press", to: "/press" },
 ];
 
 const socials = [
