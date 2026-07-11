@@ -2,8 +2,8 @@ import { Eye, RotateCcw } from "lucide-react";
 import { useState } from "react";
 import Lightbox from "../ui/Lightbox";
 
-const loungeImage = "/images/hero/lounge-area.webp";
-const gymImage = "/images/community/V2.jpeg";
+const loungeImage = "/images/gallery/S5.webp";
+const gymImage = "/images/gallery/S6.webp";
 
 const allImages = [loungeImage, gymImage];
 

@@ -7,10 +7,12 @@ import FAQs from "../components/sections/FAQs";
 import MoreAnswers from "../components/sections/MoreAnswers";
 
 const carouselImages = [
-  "/images/hero/lounge-area.webp",
-  "/images/student-living/V1.jpeg",
-  "/images/community/V2.jpeg",
-  "/images/community/V3.jpeg",
+  "/images/gallery/S2.webp",
+  "/images/gallery/S3.webp",
+  "/images/gallery/S4.webp",
+  "/images/gallery/S5.webp",
+  "/images/gallery/S6.webp",
+  "/images/gallery/S7.webp",
 ];
 
 export default function StudentHomesPage() {

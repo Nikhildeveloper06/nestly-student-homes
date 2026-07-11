@@ -28,10 +28,10 @@ const tiers = [
 ];
 
 const galleryImages = [
-  "/images/hero/lounge-area.webp",
-  "/images/student-living/V1.jpeg",
-  "/images/community/V2.jpeg",
-  "/images/community/V3.jpeg",
+  "/images/gallery/S1.webp",
+  "/images/gallery/S2.webp",
+  "/images/gallery/S3.webp",
+  "/images/gallery/S4.webp",
 ];
 
 const features = [

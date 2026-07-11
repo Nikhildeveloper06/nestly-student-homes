@@ -119,7 +119,7 @@ export default function ParksideLocation() {
 
           <div className="relative rounded-3xl overflow-hidden flex-1 border border-black/10">
             <img
-              src="/images/community/V2.jpeg"
+              src="/images/gallery/S8.webp"
               alt="Nestly Parkside entrance"
               className="absolute inset-0 w-full h-full object-cover"
             />
