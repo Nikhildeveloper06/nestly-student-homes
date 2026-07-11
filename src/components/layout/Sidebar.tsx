@@ -3,7 +3,7 @@ import WaveButton from "../ui/WaveButton";
 
 const navItems = [
   { number: "01", label: "Student Homes", color: "bg-nestly-blue", to: "/student-homes" },
-  { number: "02", label: "Our way of living", color: "bg-nestly-orange", href: "/#section-02" },
+  { number: "02", label: "Our way of living", color: "bg-nestly-orange", to: "/our-way-of-living" },
   { number: "03", label: "Community", color: "bg-nestly-red", to: "/community" },
   { number: "04", label: "Contact", color: "bg-nestly-green", to: "/contact" },
 ];
@@ -71,7 +71,7 @@ export default function Sidebar() {
 
       <div className="flex-1 flex flex-col gap-2 min-h-0">
         {navItems.map(function (item) {
-          const isActive = item.to && location.pathname === item.to;
+          const isActive = location.pathname === item.to;
           const className = item.color + " rounded-xl p-3 flex-1 flex flex-col justify-between font-display font-medium transition-colors duration-300 hover:text-white";
           const inner = (
             <>
@@ -83,18 +83,10 @@ export default function Sidebar() {
             </>
           );
 
-          if (item.to) {
-            return (
-              <Link key={item.number} to={item.to} className={className}>
-                {inner}
-              </Link>
-            );
-          }
-
           return (
-            <a key={item.number} href={item.href} className={className}>
+            <Link key={item.number} to={item.to} className={className}>
               {inner}
-            </a>
+            </Link>
           );
         })}
       </div>
