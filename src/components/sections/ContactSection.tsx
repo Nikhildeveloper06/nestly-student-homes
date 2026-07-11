@@ -31,7 +31,7 @@ export default function ContactSection() {
     <section className="page-enter mt-4">
       <div className="bg-nestly-green rounded-3xl p-4 md:p-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 order-2 lg:order-1">
             <div
               className="stagger-in relative rounded-3xl overflow-hidden h-[280px] md:h-[340px] border border-black/10"
               style={{ animationDelay: "0s" }}
@@ -79,7 +79,7 @@ export default function ContactSection() {
           </div>
 
           <div
-            className="stagger-in bg-white border border-black/10 rounded-3xl p-6 md:p-8"
+            className="stagger-in bg-white border border-black/10 rounded-3xl p-6 md:p-8 order-1 lg:order-2"
             style={{ animationDelay: "0.3s" }}
           >
             <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium inline-block">

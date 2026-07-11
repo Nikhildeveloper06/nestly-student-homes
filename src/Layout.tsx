@@ -61,7 +61,7 @@ export default function Layout() {
           className="flex-1 min-w-0 p-4 h-screen overflow-y-auto"
         >
           <MobileNav />
-          <div ref={contentRef}>
+          <div ref={contentRef} className="max-w-[1920px] mx-auto">
             <Outlet />
             <Footer />
           </div>

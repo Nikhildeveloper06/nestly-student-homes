@@ -7,7 +7,7 @@ export default function Hero() {
       className="hero-entrance relative w-full h-[75vh] md:h-[calc(100vh-2rem)] rounded-3xl overflow-hidden"
     >
       <img
-        src="/images/hero/lounge-area.webp"
+        src="/images/hero/Hero-img1.webp"
         alt="Nestly student common area"
         className="absolute inset-0 w-full h-full object-cover"
       />
