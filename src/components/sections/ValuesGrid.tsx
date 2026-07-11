@@ -6,7 +6,7 @@ const values = [
     color: "bg-nestly-green",
     number: "1",
     title: "Simplicity",
-    image: "/images/gallery/S6.webp",
+    image: "/images/gallery/S1.webp",
     items: [
       "All-inclusive rent, one monthly payment",
       "Move-in ready from day one",
