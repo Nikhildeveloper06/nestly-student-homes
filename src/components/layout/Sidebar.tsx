@@ -57,7 +57,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="sidebar-entrance hidden md:flex md:flex-col w-48 shrink-0 gap-2 p-3 h-screen">
+    <aside className="sidebar-entrance hidden lg:flex lg:flex-col w-48 shrink-0 gap-2 p-3 h-screen">
       <div className="mb-2">
         <Link to="/">
           <h1 className="font-display font-bold text-2xl leading-none">

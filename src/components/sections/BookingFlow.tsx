@@ -59,7 +59,7 @@ export default function BookingFlow() {
 
   if (submitted) {
     return (
-      <div className="bg-nestly-green rounded-3xl p-10 md:p-16 flex flex-col items-center justify-center text-center flex-1 min-h-0">
+      <div className="bg-nestly-green rounded-3xl p-6 sm:p-10 md:p-16 flex flex-col items-center justify-center text-center min-h-[500px] lg:flex-1 lg:min-h-0">
         <div className="checkmark-pop bg-nestly-black rounded-full w-16 h-16 flex items-center justify-center">
           <CheckCircle2 size={32} className="text-white" />
         </div>
@@ -75,9 +75,9 @@ export default function BookingFlow() {
   }
 
   return (
-    <div className="bg-white border border-black/10 rounded-3xl overflow-hidden flex-1 min-h-0">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] h-full">
-        <div className="hidden md:block relative">
+    <div className="bg-white border border-black/10 rounded-3xl overflow-hidden min-h-[600px] lg:flex-1 lg:min-h-0">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] h-full">
+        <div className="hidden lg:block relative">
           {stepImages.map(function (src, i) {
             return (
               <img
@@ -99,7 +99,7 @@ export default function BookingFlow() {
           </div>
         </div>
 
-        <div className="flex flex-col h-full p-6 md:p-8 min-h-0">
+        <div className="flex flex-col h-full p-4 sm:p-6 md:p-8 min-h-0">
           <div className="relative flex items-center justify-between mb-6 shrink-0">
             <div className="absolute left-4 right-4 top-4 h-0.5 bg-black/10 -z-0">
               <div

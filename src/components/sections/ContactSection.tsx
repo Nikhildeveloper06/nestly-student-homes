@@ -29,11 +29,11 @@ function LinkedinIcon() {
 export default function ContactSection() {
   return (
     <section className="page-enter mt-4">
-      <div className="bg-[#07aa3c] rounded-3xl p-4 md:p-6 md:h-[calc(100vh-6.5rem)]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
-          <div className="flex flex-col gap-4 h-full">
+      <div className="bg-nestly-green rounded-3xl p-4 md:p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-4">
             <div
-              className="stagger-in relative rounded-3xl overflow-hidden flex-1 min-h-[200px] border border-black/10"
+              className="stagger-in relative rounded-3xl overflow-hidden h-[280px] md:h-[340px] border border-black/10"
               style={{ animationDelay: "0s" }}
             >
               <iframe
@@ -52,10 +52,10 @@ export default function ContactSection() {
             </div>
 
             <div
-              className="stagger-in relative bg-[#1ce248] rounded-3xl overflow-hidden flex-1 min-h-[180px] border border-black/10"
+              className="stagger-in relative bg-[#39FF6E] rounded-3xl overflow-hidden min-h-[320px] md:min-h-[400px] border border-black/10"
               style={{ animationDelay: "0.15s" }}
             >
-              <div className="h-full flex flex-col justify-between p-5 pr-[38%] md:pr-[35%]">
+              <div className="h-full flex flex-col justify-between p-5 md:p-6 pr-[44%] sm:pr-[40%]">
                 <h2 className="font-display font-bold text-xl md:text-2xl leading-tight text-black">
                   Let's
                   <br />
@@ -68,99 +68,100 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="absolute right-0 top-0 bottom-0 w-[38%] md:w-[35%] bg-nestly-cream border-l border-black/10 rounded-3xl p-5 flex flex-col justify-between">
-                <h3 className="font-display font-bold text-xl md:text-2xl">nestly.</h3>
-                <div>
-                  <p className="font-display font-bold text-[11px] md:text-xs">hello@nestly.example</p>
-                  <p className="font-display font-bold text-[11px] md:text-xs mt-1">+91 98765 43210</p>
+              <div className="absolute right-0 top-0 bottom-0 w-[44%] sm:w-[40%] bg-nestly-cream p-3 sm:p-5 flex flex-col justify-between">
+                <h3 className="font-display font-bold text-lg sm:text-2xl">nestly.</h3>
+                <div className="min-w-0">
+                  <p className="font-display font-bold text-[10px] sm:text-xs break-words leading-tight">hello@nestly.example</p>
+                  <p className="font-display font-bold text-[10px] sm:text-xs mt-1 break-words leading-tight">+91 98765 43210</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div
-            className="stagger-in bg-white border border-black/10 rounded-3xl p-5 md:p-6 h-full flex flex-col overflow-hidden"
+            className="stagger-in bg-white border border-black/10 rounded-3xl p-6 md:p-8"
             style={{ animationDelay: "0.3s" }}
           >
-            <span className="border border-black rounded-full px-3 py-1.5 w-fit text-xs font-medium inline-block">
+            <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium inline-block">
               Contact
             </span>
 
-            <h2 className="font-display font-bold text-2xl sm:text-3xl mt-4 leading-tight">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl mt-6 leading-tight">
               Any questions?
               <br />
               We're here to answer!
             </h2>
-            <p className="mt-2 text-black/70 text-xs md:text-sm">
+            <p className="mt-3 text-black/70 text-sm md:text-base">
               Complete the form and our team will contact you shortly.
             </p>
 
-            <form className="mt-4 flex flex-col gap-3 flex-1 min-h-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form className="mt-8 flex flex-col gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs font-medium">Name *</label>
+                  <label className="text-sm font-medium">Name *</label>
                   <input
                     type="text"
-                    className="w-full border-b border-black/30 focus:border-black outline-none py-1.5 mt-0.5 bg-transparent text-sm"
+                    className="w-full border-b border-black/30 focus:border-black outline-none py-2 mt-1 bg-transparent"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium">Surname *</label>
+                  <label className="text-sm font-medium">Surname *</label>
                   <input
                     type="text"
-                    className="w-full border-b border-black/30 focus:border-black outline-none py-1.5 mt-0.5 bg-transparent text-sm"
+                    className="w-full border-b border-black/30 focus:border-black outline-none py-2 mt-1 bg-transparent"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs font-medium">Email *</label>
+                  <label className="text-sm font-medium">Email *</label>
                   <input
                     type="email"
-                    className="w-full border-b border-black/30 focus:border-black outline-none py-1.5 mt-0.5 bg-transparent text-sm"
+                    className="w-full border-b border-black/30 focus:border-black outline-none py-2 mt-1 bg-transparent"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium">Phone *</label>
+                  <label className="text-sm font-medium">Phone *</label>
                   <input
                     type="tel"
-                    className="w-full border-b border-black/30 focus:border-black outline-none py-1.5 mt-0.5 bg-transparent text-sm"
+                    className="w-full border-b border-black/30 focus:border-black outline-none py-2 mt-1 bg-transparent"
                   />
                 </div>
               </div>
 
-              <div className="flex-1 min-h-0 flex flex-col">
-                <label className="text-xs font-medium">Message *</label>
+              <div>
+                <label className="text-sm font-medium">Message *</label>
                 <textarea
                   placeholder="Leave your message here"
-                  className="w-full flex-1 border border-black/30 focus:border-black outline-none rounded-xl p-3 mt-0.5 bg-transparent resize-none text-sm"
+                  rows={5}
+                  className="w-full border border-black/30 focus:border-black outline-none rounded-2xl p-4 mt-1 bg-transparent resize-none"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5 text-xs">
-                <label className="flex items-start gap-2">
-                  <input type="checkbox" className="mt-0.5" />
+              <div className="flex flex-col gap-3 text-sm">
+                <label className="flex items-start gap-3">
+                  <input type="checkbox" className="mt-1" />
                   <span>
                     I have read and accept the Terms of Use and the
                     Privacy Policy of Nestly.
                   </span>
                 </label>
-                <label className="flex items-start gap-2">
-                  <input type="checkbox" className="mt-0.5" />
+                <label className="flex items-start gap-3">
+                  <input type="checkbox" className="mt-1" />
                   <span>
                     I would like to receive news and updates about
-                    promotional offers from Nestly.
+                    promotional offers and activities from Nestly.
                   </span>
                 </label>
               </div>
 
               <button
                 type="submit"
-                className="bg-nestly-black text-white rounded-full px-6 py-2.5 flex items-center justify-center gap-2 font-display font-medium w-fit self-end text-sm"
+                className="bg-nestly-black text-white rounded-full px-8 py-4 flex items-center justify-center gap-2 font-display font-medium w-fit self-end"
               >
                 Send
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7" />
                   <polyline points="7 7 17 7 17 17" />
                 </svg>

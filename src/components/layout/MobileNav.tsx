@@ -49,7 +49,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <div className="flex items-center justify-between py-3">
         <h1 className="font-display font-bold text-2xl leading-none">
           nestly.
