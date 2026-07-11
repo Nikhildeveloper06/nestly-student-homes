@@ -227,3 +227,49 @@ body {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 999999s ease-in-out 0s;
 }
+
+@keyframes overlay-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay-fade-in {
+  animation: overlay-fade-in 0.3s ease-out both;
+}
+
+@keyframes modal-bounce-in {
+  0% {
+    transform: scale(0.3);
+  }
+  55% {
+    transform: scale(1.08);
+  }
+  75% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-bounce-in {
+  animation: modal-bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  opacity: 1;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.badge-pulse {
+  animation: badge-pulse 1.6s ease-in-out infinite;
+}

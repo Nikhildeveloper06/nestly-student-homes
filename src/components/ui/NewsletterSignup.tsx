@@ -18,6 +18,7 @@ export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [imgOffset, setImgOffset] = useState({ x: 0, y: 0 });
 
   function handleSubmit() {
     if (!isValidEmail(email)) {
@@ -31,6 +32,13 @@ export default function NewsletterSignup() {
   function closePopup() {
     setShowPopup(false);
     setEmail("");
+  }
+
+  function handleModalMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = (e.clientX - rect.left) / rect.width - 0.5;
+    const relY = (e.clientY - rect.top) / rect.height - 0.5;
+    setImgOffset({ x: relX * 20, y: relY * 20 });
   }
 
   return (
@@ -78,17 +86,25 @@ export default function NewsletterSignup() {
       </div>
 
       {showPopup && (
-        <div className="fixed inset-0 z-[300] bg-black/70 flex items-center justify-center p-4">
-          <div className="checkmark-pop relative rounded-3xl overflow-hidden max-w-md w-full min-h-[360px] border border-white/20">
+        <div className="overlay-fade-in fixed inset-0 z-[300] bg-black/70 flex items-center justify-center p-4">
+          <div
+            onMouseMove={handleModalMouseMove}
+            className="modal-bounce-in relative rounded-3xl overflow-hidden max-w-md w-full min-h-[380px] border border-white/20"
+          >
             <img
               src="/images/gallery/S9.webp"
               alt=""
+              style={{
+                transform:
+                  "scale(1.15) translate(" + imgOffset.x + "px, " + imgOffset.y + "px)",
+                transition: "transform 0.2s ease-out",
+              }}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50" />
 
-            <div className="relative z-10 h-full min-h-[360px] flex flex-col items-center justify-center text-center p-8 gap-4 pointer-events-none">
-              <div className="bg-nestly-green rounded-full w-14 h-14 flex items-center justify-center">
+            <div className="relative z-10 h-full min-h-[380px] flex flex-col items-center justify-center text-center p-8 gap-4 pointer-events-none">
+              <div className="badge-pulse bg-nestly-green rounded-full w-14 h-14 flex items-center justify-center">
                 <CheckCircle2 size={28} className="text-black" />
               </div>
               <h3 className="font-display font-bold text-white text-2xl md:text-3xl">
@@ -98,11 +114,18 @@ export default function NewsletterSignup() {
                 Thanks for signing up with {email}. Keep an eye on your
                 inbox for updates from Nestly.
               </p>
+
+              <button
+                onClick={closePopup}
+                className="pointer-events-auto bg-white text-black rounded-full px-6 py-2.5 font-display font-medium text-sm hover:scale-105 active:scale-95 transition-transform mt-2"
+              >
+                Got it
+              </button>
             </div>
 
             <button
               onClick={closePopup}
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors z-20"
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 hover:rotate-90 rounded-full w-10 h-10 flex items-center justify-center transition-all z-20"
             >
               <X size={20} className="text-white" />
             </button>
