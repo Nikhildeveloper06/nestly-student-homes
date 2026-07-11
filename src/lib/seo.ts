@@ -1,5 +1,5 @@
 export const SITE_NAME = "Nestly Student Homes";
-export const SITE_URL = "https://nestly.example";
+export const SITE_URL = "https://dashing-caramel-4ae194.netlify.app";
 export const DEFAULT_OG_IMAGE = SITE_URL + "/images/hero/Hero-img1.webp";
 
 export function organizationSchema() {

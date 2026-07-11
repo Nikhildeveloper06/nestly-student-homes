@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nestly.example/sitemap.xml
+Sitemap: https://dashing-caramel-4ae194.netlify.app/sitemap.xml
