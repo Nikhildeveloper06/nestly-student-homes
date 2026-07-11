@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Lenis from "lenis";
 import Sidebar from "./components/layout/Sidebar";
 import MobileNav from "./components/layout/MobileNav";
 import Footer from "./components/layout/Footer";
 import Preloader from "./components/ui/Preloader";
+import { organizationSchema, websiteSchema } from "./lib/seo";
 
 export default function Layout() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -18,7 +20,6 @@ export default function Layout() {
       setLoading(false);
       navigate("/", { replace: true });
     }, 2100);
-
     return function () {
       clearTimeout(timer);
     };
@@ -28,24 +29,20 @@ export default function Layout() {
     if (!wrapperRef.current || !contentRef.current) {
       return;
     }
-
     if (wrapperRef.current) {
       wrapperRef.current.scrollTop = 0;
     }
-
     const lenis = new Lenis({
       wrapper: wrapperRef.current,
       content: contentRef.current,
       duration: 1.2,
       smoothWheel: true,
     });
-
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-
     return function () {
       lenis.destroy();
     };
@@ -53,6 +50,15 @@ export default function Layout() {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="application/ld+json">
+          {JSON.stringify([organizationSchema(), websiteSchema()])}
+        </script>
+      </Helmet>
+
       <Preloader visible={loading} />
       <div className="flex h-screen bg-nestly-cream overflow-hidden">
         <Sidebar />

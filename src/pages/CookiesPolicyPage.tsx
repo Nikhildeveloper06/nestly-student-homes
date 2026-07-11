@@ -1,8 +1,24 @@
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import LegalSection from "../components/ui/LegalSection";
+import { breadcrumbSchema } from "../lib/seo";
+
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "Cookies Policy", path: "/cookies-policy" },
+];
 
 export default function CookiesPolicyPage() {
   return (
     <>
+      <Seo
+        title="Cookies Policy"
+        description="How Nestly uses cookies to keep the website functioning and to understand how visitors use our site."
+        path="/cookies-policy"
+        jsonLd={breadcrumbSchema(breadcrumbItems)}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <section className="page-enter mt-4">
         <div className="bg-nestly-orange rounded-3xl p-6 md:p-10 text-center">
           <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium inline-block">

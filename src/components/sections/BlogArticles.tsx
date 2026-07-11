@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
 
-type Article = {
+export type Article = {
   category: string;
   date: string;
   title: string;
@@ -9,7 +9,7 @@ type Article = {
   content: string[];
 };
 
-const articles: Article[] = [
+export const articles: Article[] = [
   {
     category: "Moving Out",
     date: "March 2026",

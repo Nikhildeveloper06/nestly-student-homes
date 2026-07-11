@@ -1,12 +1,32 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import BlogHero from "../components/sections/BlogHero";
-import BlogArticles from "../components/sections/BlogArticles";
+import BlogArticles, { articles } from "../components/sections/BlogArticles";
 import NewsletterSignup from "../components/ui/NewsletterSignup";
 import ScrollReveal from "../components/ui/ScrollReveal";
+import { breadcrumbSchema, blogPostingSchema } from "../lib/seo";
+
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/blog" },
+];
 
 export default function BlogPage() {
+  const articleSchemas = articles.map(function (article) {
+    return blogPostingSchema(article);
+  });
+
   return (
     <>
+      <Seo
+        title="The Nestly Blog - Student Life, Budgeting & Housing Advice"
+        description="Practical guides on moving out, budgeting as a student, roommates, wellbeing, and choosing the right student housing - from the Nestly team."
+        path="/blog"
+        jsonLd={[breadcrumbSchema(breadcrumbItems), ...articleSchemas]}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <BlogHero />
 
       <ScrollReveal>

@@ -10,7 +10,7 @@ function ArrowDown() {
   );
 }
 
-const faqs = [
+export const faqs = [
   {
     category: "Practicalities",
     question: "How can I book a unit at Nestly?",

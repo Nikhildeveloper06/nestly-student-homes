@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MapPin, Clock, Plus, X } from "lucide-react";
 
-type Role = {
+export type Role = {
   title: string;
   department: string;
   location: string;
@@ -10,7 +10,7 @@ type Role = {
   responsibilities: string[];
 };
 
-const roles: Role[] = [
+export const roles: Role[] = [
   {
     title: "Property Field Staff (PF Boys)",
     department: "Operations",

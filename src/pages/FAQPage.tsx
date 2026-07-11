@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import FAQHero from "../components/sections/FAQHero";
-import FAQs from "../components/sections/FAQs";
+import FAQs, { faqs } from "../components/sections/FAQs";
 import NewsletterSignup from "../components/ui/NewsletterSignup";
 import ScrollReveal from "../components/ui/ScrollReveal";
+import { breadcrumbSchema, faqPageSchema } from "../lib/seo";
+
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "FAQ", path: "/faq" },
+];
 
 export default function FAQPage() {
   return (
     <>
+      <Seo
+        title="FAQs - Booking, Pricing and Living at Nestly"
+        description="Answers to common questions about booking a unit, all-inclusive pricing, moving in and out, and life at Nestly student accommodation."
+        path="/faq"
+        jsonLd={[breadcrumbSchema(breadcrumbItems), faqPageSchema(faqs)]}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <FAQHero />
 
       <ScrollReveal>

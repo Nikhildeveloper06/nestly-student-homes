@@ -83,7 +83,7 @@ export default function BookingFlow() {
               <img
                 key={src}
                 src={src}
-                alt=""
+                alt={"Booking step: " + steps[i]}
                 className={
                   "absolute inset-0 w-full h-full object-cover transition-opacity duration-500 " +
                   (i === step ? "opacity-100" : "opacity-0")

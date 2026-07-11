@@ -1,8 +1,24 @@
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import LegalSection from "../components/ui/LegalSection";
+import { breadcrumbSchema } from "../lib/seo";
+
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy-policy" },
+];
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <Seo
+        title="Privacy Policy"
+        description="Learn what information Nestly collects, how it's used, and how you can control your personal data."
+        path="/privacy-policy"
+        jsonLd={breadcrumbSchema(breadcrumbItems)}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <section className="page-enter mt-4">
         <div className="bg-nestly-blue rounded-3xl p-6 md:p-10 text-center">
           <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium inline-block">

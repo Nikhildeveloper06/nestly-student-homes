@@ -22,7 +22,7 @@ export default function ImageCarousel({ images }: { images: string[] }) {
           <img
             key={src}
             src={src}
-            alt=""
+            alt={"Nestly Parkside unit photo " + (i + 1)}
             className={
               "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 " +
               (i === index ? "opacity-100" : "opacity-0")

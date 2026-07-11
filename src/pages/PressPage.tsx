@@ -1,13 +1,29 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import PressHero from "../components/sections/PressHero";
 import PressMentions from "../components/sections/PressMentions";
 import PressReleases from "../components/sections/PressReleases";
 import NewsletterSignup from "../components/ui/NewsletterSignup";
 import ScrollReveal from "../components/ui/ScrollReveal";
+import { breadcrumbSchema } from "../lib/seo";
+
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "Press", path: "/press" },
+];
 
 export default function PressPage() {
   return (
     <>
+      <Seo
+        title="Press - Nestly News, Coverage & Media Resources"
+        description="Media coverage, press releases, and resources for journalists covering Nestly's student housing and community living model."
+        path="/press"
+        jsonLd={breadcrumbSchema(breadcrumbItems)}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <PressHero />
 
       <ScrollReveal>

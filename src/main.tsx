@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import Layout from './Layout.tsx'
 import HomePage from './pages/HomePage.tsx'
@@ -19,24 +20,26 @@ import CookiesPolicyPage from './pages/CookiesPolicyPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/student-homes" element={<StudentHomesPage />} />
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/our-way-of-living" element={<OurWayOfLivingPage />} />
-          <Route path="/book-unit" element={<BookUnitPage />} />
-          <Route path="/about-us" element={<AboutPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/press" element={<PressPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/student-homes" element={<StudentHomesPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/our-way-of-living" element={<OurWayOfLivingPage />} />
+            <Route path="/book-unit" element={<BookUnitPage />} />
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/press" element={<PressPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 )

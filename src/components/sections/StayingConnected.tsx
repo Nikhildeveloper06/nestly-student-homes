@@ -72,7 +72,7 @@ function MovingCard({ item }: { item: MovingItem }) {
     <div className={"relative rounded-3xl overflow-hidden shrink-0 " + MOVING_CARD_SIZE}>
       <img
         src={item.src}
-        alt=""
+        alt="Life at Nestly - resident photo"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute top-3 left-3 bg-black/70 rounded-md p-1.5">

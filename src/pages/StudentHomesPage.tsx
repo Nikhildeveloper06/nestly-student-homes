@@ -1,3 +1,5 @@
+import Seo from "../components/seo/Seo";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 import ImageCarousel from "../components/ui/ImageCarousel";
 import ParksideLocation from "../components/sections/ParksideLocation";
 import UnitsShowcase from "../components/sections/UnitsShowcase";
@@ -5,6 +7,7 @@ import CommunityLivingSpaces from "../components/sections/CommunityLivingSpaces"
 import WhyNestlyDifferent from "../components/sections/WhyNestlyDifferent";
 import FAQs from "../components/sections/FAQs";
 import MoreAnswers from "../components/sections/MoreAnswers";
+import { breadcrumbSchema } from "../lib/seo";
 
 const carouselImages = [
   "/images/gallery/S2.webp",
@@ -15,9 +18,22 @@ const carouselImages = [
   "/images/gallery/S7.webp",
 ];
 
+const breadcrumbItems = [
+  { name: "Home", path: "/" },
+  { name: "Student Homes", path: "/student-homes" },
+];
+
 export default function StudentHomesPage() {
   return (
     <>
+      <Seo
+        title="Student Homes - Fully Furnished Units at Nestly Parkside"
+        description="Explore fully furnished student rooms at Nestly Parkside, complete with a 24/7 gym, self-service laundry, and shared community living spaces."
+        path="/student-homes"
+        jsonLd={breadcrumbSchema(breadcrumbItems)}
+      />
+      <Breadcrumbs items={breadcrumbItems} />
+
       <section className="page-enter mt-4 grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-4 h-[75vh] md:h-[calc(100vh-2rem)]">
         <div className="bg-nestly-cream border border-black/10 rounded-3xl p-6 md:p-8 flex flex-col justify-between h-full">
           <span className="border border-black rounded-full px-4 py-2 w-fit text-sm font-medium">
