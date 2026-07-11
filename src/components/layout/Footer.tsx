@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
@@ -16,11 +18,12 @@ function FacebookIcon() {
   );
 }
 
-function WhatsAppIcon() {
+function LinkedinIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-      <path d="M12 2a10 10 0 0 0 -8.6 15l-1.1 4 4.2 -1.1a10 10 0 1 0 5.5 -17.9zm0 1.8a8.2 8.2 0 0 1 6.9 12.6a8.1 8.1 0 0 1 -6.9 3.9a8.2 8.2 0 0 1 -4.2 -1.1l-0.3 -0.2 -2.5 0.7 0.7 -2.4 -0.2 -0.3a8.2 8.2 0 0 1 6.5 -13.2z" />
-      <path d="M9 7.5c-0.2 0 -0.5 0 -0.7 0.3c-0.3 0.3 -1 1 -1 2.3c0 1.4 1 2.7 1.1 2.9c0.1 0.2 2 3 4.8 4.2c0.7 0.3 1.2 0.4 1.6 0.6c0.7 0.2 1.3 0.2 1.8 0.1c0.5 -0.1 1.6 -0.7 1.9 -1.3c0.2 -0.6 0.2 -1.1 0.2 -1.2c0 -0.1 -0.2 -0.2 -0.4 -0.3c-0.2 -0.1 -1.6 -0.8 -1.8 -0.9c-0.2 -0.1 -0.4 -0.1 -0.6 0.1c-0.2 0.3 -0.6 0.9 -0.8 1c-0.1 0.2 -0.3 0.2 -0.5 0.1c-0.2 -0.1 -1 -0.4 -2 -1.2c-0.7 -0.7 -1.2 -1.5 -1.4 -1.7c-0.1 -0.2 0 -0.4 0.1 -0.5c0.1 -0.1 0.3 -0.3 0.4 -0.5c0.1 -0.2 0.2 -0.3 0.3 -0.5c0.1 -0.2 0 -0.4 0 -0.5c0 -0.2 -0.6 -1.6 -0.9 -2.1c-0.2 -0.5 -0.4 -0.4 -0.6 -0.4z" />
+      <path d="M6.5 8.5h-3v11h3v-11z" />
+      <circle cx="5" cy="5" r="2" />
+      <path d="M11.5 8.5h-3v11h3v-5.5c0 -1.5 0.8 -2.5 2.2 -2.5c1.3 0 1.8 0.9 1.8 2.5v5.5h3v-6c0 -3 -1.6 -4.5 -3.9 -4.5c-1.8 0 -2.6 1 -3.1 1.7v-1.2z" />
     </svg>
   );
 }
@@ -40,7 +43,7 @@ const companyLinks = ["About us", "Careers", "Blog", "Press"];
 const socials = [
   { Icon: InstagramIcon, color: "hover:bg-nestly-purple" },
   { Icon: FacebookIcon, color: "hover:bg-nestly-blue" },
-  { Icon: WhatsAppIcon, color: "hover:bg-nestly-green" },
+  { Icon: LinkedinIcon, color: "hover:bg-nestly-green" },
 ];
 
 export default function Footer() {
@@ -104,12 +107,12 @@ export default function Footer() {
               <p className="text-sm text-white/80">hello@nestly.example</p>
               <p className="text-sm text-white/80">+91 98765 43210</p>
             </div>
-            <a
-              href="/book-unit"
+            <Link
+              to="/book-unit"
               className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-6 py-3.5 text-sm font-display font-medium whitespace-nowrap transition-all duration-300 hover:bg-white hover:scale-105"
             >
               Book a tour
-            </a>
+            </Link>
           </div>
         </div>
 
