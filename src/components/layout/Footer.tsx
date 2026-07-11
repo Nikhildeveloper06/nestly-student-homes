@@ -46,7 +46,7 @@ const exploreLinks = [
 
 const companyLinks = [
   { label: "About us", to: "/about-us" },
-  { label: "Careers", to: null },
+  { label: "Careers", to: "/careers" },
   { label: "Blog", to: null },
   { label: "Press", to: null },
 ];
