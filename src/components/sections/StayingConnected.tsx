@@ -1,18 +1,11 @@
+import NewsletterSignup from "../ui/NewsletterSignup";
+
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
       <rect x="2" y="2" width="20" height="20" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="white" />
-    </svg>
-  );
-}
-
-function ArrowDiagonal() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="7" y1="17" x2="17" y2="7" />
-      <polyline points="7 7 17 7 17 17" />
     </svg>
   );
 }
@@ -120,19 +113,8 @@ export default function StayingConnected() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-3 md:gap-4 mt-4">
-        <div className="bg-nestly-red rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-center">
-          <span className="font-display font-bold text-base md:text-lg whitespace-nowrap">Join our newsletter</span>
-        </div>
-
-        <div className="flex gap-3 md:flex-1">
-          <div className="bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center flex-1">
-            <span className="text-sm">Your email here</span>
-          </div>
-          <button className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
-            <ArrowDiagonal />
-          </button>
-        </div>
+      <div className="mt-4">
+        <NewsletterSignup />
       </div>
     </section>
   );
