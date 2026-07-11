@@ -13,7 +13,7 @@ function ArrowDiagonal() {
 export default function MoreAnswers() {
   return (
     <section className="mt-4">
-      <Link to="/contact" className="bg-nestly-blue rounded-full py-5 px-6 md:px-10 flex items-center justify-center gap-2 hover:bg-nestly-blue/90 transition-colors">
+      <Link to="/faq" className="bg-nestly-blue rounded-full py-5 px-6 md:px-10 flex items-center justify-center gap-2 hover:bg-nestly-blue/90 transition-colors">
         <span className="font-display font-bold text-white text-base md:text-lg text-center">
           Still have questions? There's a lot more we can help with.
         </span>

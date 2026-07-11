@@ -148,7 +148,7 @@ export default function Footer() {
             (c) 2026 Nestly Student Homes. Built as a design portfolio project.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">FAQs</button>
+            <Link to="/faq" className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">FAQs</Link>
             <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">Privacy Policy</button>
             <button className="border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs text-white/80 hover:bg-white/10 transition-colors">Cookies Policy</button>
             <a href="#top" className="bg-white/10 rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-nestly-blue hover:-translate-y-1 transition-all duration-300">
