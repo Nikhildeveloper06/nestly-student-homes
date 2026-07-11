@@ -203,3 +203,19 @@ body {
 .checkmark-pop {
   animation: logo-pop 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
 }
+
+@keyframes step-pop {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.step-pop {
+  animation: step-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}

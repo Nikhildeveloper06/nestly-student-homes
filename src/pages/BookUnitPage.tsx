@@ -6,8 +6,11 @@ import ScrollReveal from "../components/ui/ScrollReveal";
 export default function BookUnitPage() {
   return (
     <>
-      <BookingHero />
-      <BookingFlow />
+      <div className="page-enter mt-4 flex flex-col gap-4 h-[calc(100vh-2rem)]">
+        <BookingHero />
+        <BookingFlow />
+      </div>
+
       <ScrollReveal>
         <WhatsIncluded />
       </ScrollReveal>
