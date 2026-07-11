@@ -42,38 +42,39 @@ export default function NewsletterSignup() {
           </span>
         </div>
 
-        <div className="flex gap-3 md:flex-1">
-          <div
-            className={
-              "bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center flex-1 transition-all " +
-              (error ? "ring-2 ring-nestly-red" : "")
-            }
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={function (e) {
-                setEmail(e.target.value);
-                if (error) {
-                  setError(false);
-                }
-              }}
-              onKeyDown={function (e) {
-                if (e.key === "Enter") {
-                  handleSubmit();
-                }
-              }}
-              placeholder="Your email here"
-              className="bg-transparent outline-none w-full text-sm placeholder-black/60"
-            />
-          </div>
-          <button
-            onClick={handleSubmit}
-            className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 hover:-translate-y-0.5 active:scale-95 transition-all"
-          >
-            <ArrowDiagonal />
-          </button>
+        <div
+          className={
+            "bg-nestly-orange rounded-full px-6 md:px-8 py-4 md:py-5 flex items-center flex-1 transition-all " +
+            (error ? "ring-2 ring-nestly-red" : "")
+          }
+        >
+          <input
+            type="email"
+            value={email}
+            onChange={function (e) {
+              setEmail(e.target.value);
+              if (error) {
+                setError(false);
+              }
+            }}
+            onKeyDown={function (e) {
+              if (e.key === "Enter") {
+                handleSubmit();
+              }
+            }}
+            placeholder="Your email here"
+            autoComplete="off"
+            style={{ backgroundColor: "transparent" }}
+            className="newsletter-input bg-transparent outline-none w-full text-sm placeholder-black/60"
+          />
         </div>
+
+        <button
+          onClick={handleSubmit}
+          className="bg-nestly-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 hover:-translate-y-0.5 active:scale-95 transition-all self-end md:self-auto"
+        >
+          <ArrowDiagonal />
+        </button>
       </div>
 
       {showPopup && (
@@ -86,14 +87,7 @@ export default function NewsletterSignup() {
             />
             <div className="absolute inset-0 bg-black/50" />
 
-            <button
-              onClick={closePopup}
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors z-10"
-            >
-              <X size={20} className="text-white" />
-            </button>
-
-            <div className="relative z-10 h-full min-h-[360px] flex flex-col items-center justify-center text-center p-8 gap-4">
+            <div className="relative z-10 h-full min-h-[360px] flex flex-col items-center justify-center text-center p-8 gap-4 pointer-events-none">
               <div className="bg-nestly-green rounded-full w-14 h-14 flex items-center justify-center">
                 <CheckCircle2 size={28} className="text-black" />
               </div>
@@ -105,6 +99,13 @@ export default function NewsletterSignup() {
                 inbox for updates from Nestly.
               </p>
             </div>
+
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition-colors z-20"
+            >
+              <X size={20} className="text-white" />
+            </button>
           </div>
         </div>
       )}
