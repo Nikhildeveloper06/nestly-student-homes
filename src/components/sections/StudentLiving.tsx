@@ -1,4 +1,5 @@
 import { Sofa, Laptop, UtensilsCrossed, Bath, Tv, Wind, Wifi, DoorOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 import Marquee from "../ui/Marquee";
 
 const leftFeatures = [
@@ -69,13 +70,13 @@ export default function StudentLiving() {
             ))}
           </div>
 
-          <a
-            href="#units"
+          <Link
+            to="/community"
             className="bg-nestly-black text-white rounded-full px-6 py-3 md:py-4 flex items-center justify-center gap-2 font-display font-medium w-fit"
           >
             Check out our Units
             <ArrowRight />
-          </a>
+          </Link>
         </div>
 
         <div className="relative rounded-3xl overflow-hidden border border-black/10 h-[280px] sm:h-[340px] md:h-auto">

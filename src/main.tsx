@@ -9,6 +9,7 @@ import CommunityPage from './pages/CommunityPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
 import OurWayOfLivingPage from './pages/OurWayOfLivingPage.tsx'
 import BookUnitPage from './pages/BookUnitPage.tsx'
+import AboutPage from './pages/AboutPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/our-way-of-living" element={<OurWayOfLivingPage />} />
           <Route path="/book-unit" element={<BookUnitPage />} />
+          <Route path="/about-us" element={<AboutPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

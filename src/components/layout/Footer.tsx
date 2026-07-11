@@ -37,8 +37,19 @@ function ArrowUp() {
   );
 }
 
-const exploreLinks = ["Student Homes", "Our way of living", "Community", "Contact"];
-const companyLinks = ["About us", "Careers", "Blog", "Press"];
+const exploreLinks = [
+  { label: "Student Homes", to: "/student-homes" },
+  { label: "Our way of living", to: "/our-way-of-living" },
+  { label: "Community", to: "/community" },
+  { label: "Contact", to: "/contact" },
+];
+
+const companyLinks = [
+  { label: "About us", to: "/about-us" },
+  { label: "Careers", to: null },
+  { label: "Blog", to: null },
+  { label: "Press", to: null },
+];
 
 const socials = [
   { Icon: InstagramIcon, color: "hover:bg-nestly-purple" },
@@ -76,10 +87,10 @@ export default function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {exploreLinks.map(function (link) {
                 return (
-                  <li key={link}>
-                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <Link to={link.to} className="footer-link text-sm text-white/80 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
                   </li>
                 );
               })}
@@ -90,11 +101,20 @@ export default function Footer() {
             <p className="font-display font-semibold text-nestly-green text-xs sm:text-sm uppercase tracking-wide">Company</p>
             <ul className="mt-4 flex flex-col gap-3">
               {companyLinks.map(function (link) {
+                if (link.to) {
+                  return (
+                    <li key={link.label}>
+                      <Link to={link.to} className="footer-link text-sm text-white/80 hover:text-white transition-colors">
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                }
                 return (
-                  <li key={link}>
-                    <a href="#" className="footer-link text-sm text-white/80 hover:text-white transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <span className="text-sm text-white/40 cursor-default">
+                      {link.label}
+                    </span>
                   </li>
                 );
               })}

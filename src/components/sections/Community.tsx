@@ -16,6 +16,13 @@ function ArrowDown() {
   );
 }
 
+function scrollToNewsletter() {
+  const el = document.getElementById("newsletter-pill");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
 export default function Community() {
   return (
     <section id="section-03" className="mt-4">
@@ -47,13 +54,13 @@ export default function Community() {
             </p>
           </div>
 
-          <a
-            href="#community"
+          <button
+            onClick={scrollToNewsletter}
             className="bg-nestly-black text-white rounded-full px-6 py-4 flex items-center gap-2 w-fit font-display font-medium"
           >
             Join our community
             <ArrowDiagonal />
-          </a>
+          </button>
         </div>
 
         <div className="relative rounded-3xl overflow-hidden h-[280px] md:h-auto">

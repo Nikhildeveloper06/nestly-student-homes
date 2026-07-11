@@ -113,7 +113,7 @@ export default function StayingConnected() {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4" id="newsletter-pill">
         <NewsletterSignup />
       </div>
     </section>

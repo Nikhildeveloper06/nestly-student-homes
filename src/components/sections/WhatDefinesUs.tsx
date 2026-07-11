@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function ArrowDiagonal() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -46,13 +48,13 @@ export default function WhatDefinesUs() {
         ))}
       </div>
 
-      <a
-        href="#way-of-living"
+      <Link
+        to="/our-way-of-living"
         className="mt-4 bg-nestly-black text-white rounded-full py-5 px-6 flex items-center justify-center gap-2 font-display font-medium"
       >
         Our way of living
         <ArrowDiagonal />
-      </a>
+      </Link>
     </section>
   );
 }

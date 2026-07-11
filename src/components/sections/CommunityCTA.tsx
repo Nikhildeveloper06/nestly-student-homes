@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import NewsletterSignup from "../ui/NewsletterSignup";
 
 function ArrowDiagonal() {
@@ -12,12 +13,12 @@ function ArrowDiagonal() {
 export default function CommunityCTA() {
   return (
     <section className="mt-4">
-      <a href="#" className="bg-nestly-black rounded-full py-5 px-6 md:px-10 flex items-center justify-center gap-2 hover:bg-nestly-black/90 transition-colors">
+      <Link to="/student-homes" className="bg-nestly-black rounded-full py-5 px-6 md:px-10 flex items-center justify-center gap-2 hover:bg-nestly-black/90 transition-colors">
         <span className="font-display font-bold text-white text-base md:text-lg text-center">
           Community isn't something you just observe. It's something you live. Explore life at Nestly
         </span>
         <ArrowDiagonal />
-      </a>
+      </Link>
 
       <div className="mt-4">
         <NewsletterSignup />

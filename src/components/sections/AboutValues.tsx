@@ -1,40 +1,48 @@
 import { useState } from "react";
 
-const values = [
-  {
-    color: "bg-nestly-green",
-    number: "1",
-    title: "Simplicity",
-    image: "/images/gallery/S1.webp",
-    items: [
-      "All-inclusive rent, one monthly payment",
-      "Move-in ready from day one",
-      "No furniture to source or assemble",
-      "Digital everything - contracts, payments, support",
-    ],
-  },
+type ValueItem = {
+  color: string;
+  number: string;
+  title: string;
+  image: string;
+  items: string[];
+};
+
+const values: ValueItem[] = [
   {
     color: "bg-nestly-orange",
-    number: "2",
-    title: "Flexibility",
-    image: "/images/gallery/S7.webp",
+    number: "1",
+    title: "Student-first, always",
+    image: "/images/gallery/S6.webp",
     items: [
-      "Choose your unit tier and upgrade anytime",
-      "Shared spaces open access, 24/7",
-      "Join community events - or skip them",
-      "Contracts built around academic terms",
+      "Every decision starts with what students actually need",
+      "Feedback loops built into every property",
+      "Pricing that stays honest and predictable",
+      "Support that responds like people, not a ticket queue",
     ],
   },
   {
-    color: "bg-nestly-blue",
-    number: "3",
-    title: "Balance",
+    color: "bg-nestly-red",
+    number: "2",
+    title: "Radical transparency",
     image: "/images/gallery/S8.webp",
     items: [
-      "Private space for focus and rest",
-      "Shared space for connection, on your terms",
-      "Gym and wellness access built in",
-      "Quiet hours respected across every unit",
+      "No hidden fees, ever",
+      "Clear contracts written in plain language",
+      "Open pricing across every unit tier",
+      "Honest answers, even when they're not what you want to hear",
+    ],
+  },
+  {
+    color: "bg-nestly-purple",
+    number: "3",
+    title: "Community by design",
+    image: "/images/gallery/S1.webp",
+    items: [
+      "Shared spaces built for real connection",
+      "Events that fit into student schedules",
+      "A team that's present, not just on-call",
+      "Neighbours who become friends, not strangers",
     ],
   },
 ];
@@ -45,7 +53,7 @@ function Column({
   onEnter,
   onLeave,
 }: {
-  data: (typeof values)[number];
+  data: ValueItem;
   hovered: boolean;
   onEnter: () => void;
   onLeave: () => void;
@@ -68,7 +76,6 @@ function Column({
             {data.title}
           </h3>
         </div>
-
         {hovered && (
           <div className="flex flex-col gap-3 mt-6">
             {data.items.map(function (item, i) {
@@ -85,7 +92,6 @@ function Column({
           </div>
         )}
       </div>
-
       <div className="smooth-expand flex-1 min-h-0 rounded-3xl overflow-hidden border border-black/10">
         <img src={data.image} alt={data.title} className="w-full h-full object-cover" />
       </div>
@@ -93,17 +99,16 @@ function Column({
   );
 }
 
-export default function ValuesGrid() {
+export default function AboutValues() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section className="mt-4">
       <div className="text-center mb-4">
         <h2 className="font-display font-bold text-2xl md:text-4xl">
-          The values behind the lifestyle
+          What we stand for
         </h2>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {values.map(function (val, i) {
           return (
