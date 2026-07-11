@@ -24,7 +24,7 @@ export default function OurWayHero() {
 
         <div className="rounded-3xl overflow-hidden border border-black/10 h-full">
           <img
-            src="/images/student-living/V1.jpeg"
+            src="/images/gallery/S2.webp"
             alt="Nestly student living"
             className="w-full h-full object-cover"
           />

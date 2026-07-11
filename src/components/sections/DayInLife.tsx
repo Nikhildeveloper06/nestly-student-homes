@@ -15,7 +15,7 @@ const moments = [
     label: "Afternoon",
     Icon: Sun,
     color: "bg-nestly-blue",
-    image: "/images/community/V2.jpeg",
+    image: "/images/gallery/S3.webp",
     text: "Deep focus in your private workspace, or a change of scenery in the shared lounge when you need people around you.",
   },
   {
@@ -23,7 +23,7 @@ const moments = [
     label: "Evening",
     Icon: Sunset,
     color: "bg-nestly-red",
-    image: "/images/community/V3.jpeg",
+    image: "/images/gallery/S4.webp",
     text: "Gym session, a home-cooked dinner, or catching up with neighbours in the common areas - whatever the day calls for.",
   },
   {
@@ -31,7 +31,7 @@ const moments = [
     label: "Night",
     Icon: Moon,
     color: "bg-nestly-purple",
-    image: "/images/student-living/V1.jpeg",
+    image: "/images/gallery/S5.webp",
     text: "A quiet room built for real rest, with 24/7 security so winding down never comes with a second thought.",
   },
 ];

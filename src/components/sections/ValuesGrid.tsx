@@ -6,7 +6,7 @@ const values = [
     color: "bg-nestly-green",
     number: "1",
     title: "Simplicity",
-    image: "/images/community/V2.jpeg",
+    image: "/images/gallery/S6.webp",
     items: [
       "All-inclusive rent, one monthly payment",
       "Move-in ready from day one",
@@ -18,7 +18,7 @@ const values = [
     color: "bg-nestly-orange",
     number: "2",
     title: "Flexibility",
-    image: "/images/student-living/V1.jpeg",
+    image: "/images/gallery/S7.webp",
     items: [
       "Choose your unit tier and upgrade anytime",
       "Shared spaces open access, 24/7",
@@ -30,7 +30,7 @@ const values = [
     color: "bg-nestly-blue",
     number: "3",
     title: "Balance",
-    image: "/images/community/V3.jpeg",
+    image: "/images/gallery/S8.webp",
     items: [
       "Private space for focus and rest",
       "Shared space for connection, on your terms",
