@@ -14,6 +14,8 @@ import FAQPage from './pages/FAQPage.tsx'
 import CareersPage from './pages/CareersPage.tsx'
 import BlogPage from './pages/BlogPage.tsx'
 import PressPage from './pages/PressPage.tsx'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx'
+import CookiesPolicyPage from './pages/CookiesPolicyPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -31,6 +33,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/press" element={<PressPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
