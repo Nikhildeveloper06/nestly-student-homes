@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Ruler,
   Sofa,
@@ -74,13 +75,10 @@ export default function UnitsShowcase() {
               );
             })}
 
-            
-              href="/book-unit"
-              className="bg-nestly-green rounded-full px-6 py-4 text-center font-display font-bold flex items-center justify-center gap-2"
-            >
+            <Link to="/book-unit" className="bg-nestly-green rounded-full px-6 py-4 text-center font-display font-bold flex items-center justify-center gap-2">
               Book your Unit
               <ArrowUpRight size={18} />
-            </a>
+            </Link>
 
             <div className="flex items-center gap-2 justify-center text-sm mt-2">
               <Phone size={16} />
