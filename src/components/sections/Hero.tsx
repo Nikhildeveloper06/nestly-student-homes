@@ -28,7 +28,7 @@ export default function Hero() {
 
         <div className="mt-6 md:mt-10">
           <WaveButton
-            href="#book"
+            href="/book-unit"
             baseClassName="bg-nestly-black rounded-full px-6 py-3.5 md:px-8 md:py-4 flex items-center gap-2"
             textClassName="flex items-center gap-2 text-white"
           >

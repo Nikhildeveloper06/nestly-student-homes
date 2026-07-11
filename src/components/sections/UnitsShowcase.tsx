@@ -74,10 +74,13 @@ export default function UnitsShowcase() {
               );
             })}
 
-            <div className="bg-nestly-green rounded-full px-6 py-4 text-center font-display font-bold flex items-center justify-center gap-2">
+            
+              href="/book-unit"
+              className="bg-nestly-green rounded-full px-6 py-4 text-center font-display font-bold flex items-center justify-center gap-2"
+            >
               Book your Unit
               <ArrowUpRight size={18} />
-            </div>
+            </a>
 
             <div className="flex items-center gap-2 justify-center text-sm mt-2">
               <Phone size={16} />

@@ -105,7 +105,7 @@ export default function Footer() {
               <p className="text-sm text-white/80">+91 98765 43210</p>
             </div>
             <a
-              href="#book"
+              href="/book-unit"
               className="mt-4 inline-block bg-nestly-purple text-black rounded-full px-6 py-3.5 text-sm font-display font-medium whitespace-nowrap transition-all duration-300 hover:bg-white hover:scale-105"
             >
               Book a tour

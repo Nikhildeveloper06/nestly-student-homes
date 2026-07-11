@@ -92,7 +92,7 @@ export default function Sidebar() {
       </div>
 
       <WaveButton
-        href="/#book"
+        href="/book-unit"
         baseClassName="rounded-xl p-3 text-center font-display font-medium bg-nestly-purple text-sm"
       >
         Book your Unit

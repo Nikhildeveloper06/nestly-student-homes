@@ -101,7 +101,7 @@ export default function MobileNav() {
         </div>
 
         <WaveButton
-          href="#book"
+          href="/book-unit"
           baseClassName="rounded-xl p-4 text-center font-display font-medium bg-nestly-purple text-sm"
         >
           Book your Unit
