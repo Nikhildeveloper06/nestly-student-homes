@@ -102,7 +102,7 @@ export default function FeatureGrid() {
         </div>
 
         <div style={{ gridArea: "photo1" }}>
-          <PhotoCard src="/images/hero/lounge-area.webp" position="top" />
+          <PhotoCard src="/images/gallery/S2.webp" position="top" />
         </div>
 
         <div style={{ gridArea: "security" }}>
@@ -129,7 +129,7 @@ export default function FeatureGrid() {
         </div>
 
         <div style={{ gridArea: "photo2" }}>
-          <PhotoCard src="/images/hero/lounge-area.webp" position="bottom" />
+          <PhotoCard src="/images/gallery/S1.webp" position="bottom" />
         </div>
       </div>
     </section>

@@ -80,7 +80,7 @@ export default function StudentLiving() {
 
         <div className="relative rounded-3xl overflow-hidden border border-black/10 h-[280px] sm:h-[340px] md:h-auto">
           <img
-            src="/images/student-living/V1.jpeg"
+            src="/images/gallery/S3.webp"
             alt="Nestly student unit"
             className="absolute inset-0 w-full h-full object-cover"
           />

@@ -19,6 +19,7 @@ function ArrowDiagonal() {
 
 type MovingItem =
   | { type: "photo"; src: string; caption?: string }
+  | { type: "video"; src: string }
   | { type: "blue"; text: string };
 
 const movingItems: MovingItem[] = [
@@ -30,6 +31,8 @@ const movingItems: MovingItem[] = [
   },
   { type: "photo", src: "/images/community/V3.jpeg" },
   { type: "photo", src: "/images/hero/lounge-area.webp" },
+  { type: "photo", src: "/images/gallery/S7.webp" },
+  { type: "video", src: "/videos/video1.mp4" },
   {
     type: "blue",
     text: "Take our quiz and find out which unit matches your vibe.",
@@ -50,6 +53,24 @@ function MovingCard({ item }: { item: MovingItem }) {
         <p className="font-display font-bold text-sm md:text-xl leading-tight">
           {item.text}
         </p>
+      </div>
+    );
+  }
+
+  if (item.type === "video") {
+    return (
+      <div className={"relative rounded-3xl overflow-hidden shrink-0 " + MOVING_CARD_SIZE}>
+        <video
+          src={item.src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute top-3 left-3 bg-black/70 rounded-md p-1.5">
+          <InstagramIcon />
+        </div>
       </div>
     );
   }

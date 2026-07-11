@@ -11,17 +11,17 @@ const cards = [
   {
     title: "For Every Student",
     text: "Whether you're moving from Delhi, Mumbai, Bengaluru or a small town, Nestly feels like home from day one - private space when you need it, good company when you don't.",
-    img: "/images/student-living/V1.jpeg",
+    img: "/images/gallery/S4.webp",
   },
   {
     title: "Built With Purpose",
     text: "Fast WiFi for online classes, quiet corners for exam season, and common areas made for chai breaks with friends. Every detail is planned around real student life.",
-    img: "/images/community/V2.jpeg",
+    img: "/images/gallery/S5.webp",
   },
   {
     title: "With Care",
     text: "Parents trust us, students love us. 24/7 security, verified move-ins, and a support team that's always a call away - so you can focus on college, not chores.",
-    img: "/images/community/V3.jpeg",
+    img: "/images/gallery/S6.webp",
   },
 ];
 
