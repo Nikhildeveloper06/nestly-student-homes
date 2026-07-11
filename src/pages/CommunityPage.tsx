@@ -1,6 +1,6 @@
 import CommunityHero from "../components/sections/CommunityHero";
-import EventsHorizontalScroll from "../components/sections/EventsHorizontalScroll";
-import CommunitySpacesSection from "../components/sections/CommunitySpacesSection";
+import FeatureGrid from "../components/sections/FeatureGrid";
+import CommunityLivingSpaces from "../components/sections/CommunityLivingSpaces";
 import CommunityCTA from "../components/sections/CommunityCTA";
 import ScrollReveal from "../components/ui/ScrollReveal";
 
@@ -9,10 +9,12 @@ export default function CommunityPage() {
     <>
       <CommunityHero />
 
-      <EventsHorizontalScroll />
+      <ScrollReveal>
+        <FeatureGrid />
+      </ScrollReveal>
 
       <ScrollReveal>
-        <CommunitySpacesSection />
+        <CommunityLivingSpaces />
       </ScrollReveal>
 
       <ScrollReveal>

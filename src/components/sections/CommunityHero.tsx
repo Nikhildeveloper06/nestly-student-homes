@@ -1,11 +1,10 @@
 import Marquee from "../ui/Marquee";
 
 const marqueeItems = [
-  "Community Give-Back",
   "Different ways of living",
-  "Social Days & Nights",
+  "Social days & nights",
   "Different rhythms",
-  "Health & Wellness",
+  "Health & wellness",
 ];
 
 export default function CommunityHero() {
